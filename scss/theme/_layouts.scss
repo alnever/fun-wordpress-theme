@@ -1,0 +1,49 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+} /* .container */
+
+.main {
+  display: flex;
+  flex-direction: column;
+}
+
+header, .header {
+  @include column($content-width, $content-align);
+}
+
+.content {
+  @include row($content-width, $content-align, nowrap);
+}
+
+.row {
+  @include row();
+}
+
+article.post-index {
+  @include col-3();
+  padding: $padding;
+}
+
+footer, .footer {
+  @include column($content-width, $content-align);
+}
+
+.left-sidebar {
+  @include col-4();
+  padding: $padding;
+}
+
+.right-sidebar {
+  @include col-4();
+  padding: $padding;
+}
+
+.header-sidebar {
+  @include row($content-width, $content-align, nowrap);
+}
+
+.footer-sidebar {
+  @include row($content-width, $content-align, nowrap);
+}

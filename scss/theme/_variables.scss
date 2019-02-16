@@ -1,0 +1,64 @@
+/* fonts */
+$font-primary: 'Roboto', sans-serif;
+$font-secondary: 'Roboto Slab', serif;
+$font-mono: 'Roboto Mono', monospace;
+
+$font-enorm: 72px;
+$font-gigant: 60px;
+$font-huge: 48px;
+$font-large: 40px;
+$font-bigger: 36px;
+$font-big: 32px;
+$font-medium: 28px;
+$font-small: 24px;
+$font-smaller: 20px;
+$font-regular: 18px;
+$font-code: 16px;
+$font-tiny: 14px;
+
+$font-sub-sup-size: 0.5em;
+
+$theme-font-sizes: (
+    enorm: $font-enorm,
+    gigant: $font-gigant,
+    huge: $font-huge,
+    large: $font-large,
+    bigger: $font-bigger,
+    big: $font-big,
+    medium: $font-medium,
+    small: $font-small,
+    smaller: $font-smaller,
+    regular: $font-regular,
+    code: $font-code,
+    tiny: $font-tiny
+);
+// colors
+
+$primary: #4abdac;
+$secondary: #fc4a1a;
+$light: #dfdce3;
+$dark: #2c2c2d;
+$accent: #f76733;
+$white: #ffffff;
+$black: #000000;
+
+/* color sets */
+$theme-colors: (
+    primary: $primary,
+    secondary: $secondary,
+    light: $light,
+    dark: $dark,
+    accent: $accent
+);
+
+// paddings
+
+$padding: 1em;
+
+// border
+
+$border-radius: 5px;
+
+// main content parameters
+$content-width: 1024px;
+$content-align: center;

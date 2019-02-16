@@ -1,0 +1,38 @@
+@mixin row($width: 100%, $align-self: normal, $wrap: wrap) {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: $wrap;
+  width: $width;
+  align-self: $align-self;
+}
+
+@mixin column($width: 100%, $align-self: normal) {
+  display: flex;
+  flex-direction: column;
+  width: $width;
+  align-self: $align-self;
+}
+
+@mixin col-1 {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+@mixin col-2 {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+@mixin col-3 {
+  display: flex;
+  flex-direction: column;
+  width: 33.333333%;
+}
+
+@mixin col-4 {
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+}

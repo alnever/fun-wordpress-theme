@@ -1,0 +1,88 @@
+@mixin link($color, $hover-color, $underline) {
+    color: $color;
+    text-decoration: none;
+
+    &:link {
+
+    }
+
+    &:hover {
+      color: $hover-color;
+      @if ($underline == true) {
+        text-decoration: underline;
+      } @else {
+        text-decoration: none;
+      }
+    }
+
+    &:active {
+      color: $hover-color;
+      @if ($underline == true) {
+        text-decoration: underline;
+      } @else {
+        text-decoration: none;
+      }
+    }
+
+    &:visited{
+
+    }
+}
+
+@mixin btn($color, $hover-color) {
+    color: $white;
+    background-color: $color;
+    text-decoration: none;
+    border: 1px solid $color;
+    border-radius: $border-radius;
+    padding: 0.5rem;
+
+    &:link {
+
+    }
+
+    &:hover {
+      background-color: $hover-color;
+      border: 1px solid $hover-color;
+      text-decoration: none;
+    }
+
+    &:active {
+      background-color: $hover-color;
+      border: 1px solid $hover-color;
+      text-decoration: none;
+    }
+
+    &:visited{
+
+    }
+}
+
+@mixin btn-outline($color, $hover-color) {
+    color: $white;
+    background-color: $color;
+    text-decoration: none;
+    border: 1px solid $color;
+    border-radius: $border-radius;
+    padding: 0.5rem;
+
+    &:link {
+
+    }
+
+    &:hover {
+      background-color: $hover-color;
+      border: 1px solid $hover-color;
+      text-decoration: none;
+    }
+
+    &:active {
+      background-color: $hover-color;
+      border: 1px solid $hover-color;
+      text-decoration: none;
+    }
+
+    &:visited{
+
+    }
+}

@@ -1,0 +1,78 @@
+/*
+* header menu
+*/
+
+@mixin navbar($font, $font-size, $color, $hover-color, $bg-color) {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  background-color: $bg-color;
+
+  & > .brand {
+    float: left;
+    padding: $padding;
+
+    & > a {
+      @include link($color, $hover-color, false);
+      font-family: $font;
+      font-size: $font-size;
+    }
+  }
+
+  & > .toggle {
+    display: none;
+    padding: $padding;
+  }
+
+  & >.collapsed {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    & > div.nav {
+      & > div.menu {
+        & > ul {
+          display: flex;
+          flex-direction: row;
+
+          & > li {
+            list-style-type: none;
+            padding: $padding;
+
+            & > a {
+              @include link($color, $hover-color, false);
+              font-family: $font;
+              font-size: $font-size;
+            }
+
+            &.page_item_has_children {
+              position: relative;
+              & > ul.children {
+                display: none;
+              }
+
+              &:hover > ul.children {
+                position: absolute;
+                display: block;
+                min-width: 300px;
+
+                background-color: $bg-color;
+
+                & > li {
+                  list-style-type: none;
+                  padding: $padding;
+
+                  & > a {
+                    @include link($color, $hover-color, false);
+                    font-family: $font;
+                    font-size: $font-size - 2px;
+                  }
+                }
+              }
+            } /* .page_item_has_children */
+          }
+        } /* ul */
+      } /* div.menu */
+    } /* div.nav */
+  } /* .collapsed */
+}

@@ -1,0 +1,3 @@
+nav.navbar {
+  @include navbar($font-primary, $font-smaller, $primary, $secondary, $light);
+}
