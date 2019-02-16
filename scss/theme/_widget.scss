@@ -1,0 +1,47 @@
+.widget {
+    @include widget($font-primary, $font-smaller, $secondary, $font-primary, $font-code, $primary, $accent);
+    padding-bottom: $padding;
+
+    li {
+        padding-bottom: $padding / 4;
+    }
+}
+
+.widget_archive {
+    .widget-archive-count {
+        @include badge();
+    }
+}
+
+.widget_categories {
+    .widget-category-count {
+        @include badge();
+    }
+}
+
+.widget_recent_entries,
+.widget_recent_comments {
+    @include widget-column-elements();
+}
+
+.widget_tag_cloud {
+    a {
+        @include badge-outline($font-primary, $font-code, $primary);
+        display: inline-flex;
+        padding: $padding / 5;
+        margin: $padding / 5;
+        white-space: nowrap;
+
+        span {
+            padding-left: $padding / 5;
+        }
+    }
+}
+
+.widget_calendar {
+    @include widget-calendar($font-primary, $font-regular, $secondary, $font-primary, $font-code, $primary, $accent);
+}
+
+.widget_search {
+    padding: $padding;
+}

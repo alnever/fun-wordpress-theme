@@ -1,3 +1,99 @@
-.widget {
-  list-style-type: none;
+@mixin widget($title-font, $title-size, $title-color, $link-font, $link-size, $link-color, $link-hover-color, $link-underline: false) {
+    list-style-type: none;
+
+    & > .widgettitle {
+        font-family: $title-font;
+        font-size: $title-size;
+        color: $title-color;
+    }
+
+    & > ul {
+        & > li {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+
+            list-style-type: none;
+
+            font-family: $link-font;
+            font-size:   $link-size;
+
+             a {
+                font-family: $link-font;
+                font-size:   $link-size;
+                @include link($link-color, $link-hover-color, $link-underline);
+            }
+
+        }
+    }
+
+    /* special definitions for recent posts & comments widget */
+
+}
+
+@mixin widget-column-elements() {
+    & > ul {
+        & > li {
+            display: flex !important;
+            flex-direction: column !important;
+        }
+    }
+}
+
+/* special definitions fot categories widget */
+
+.widget_categories {
+    li.super-category {
+        display: flex;
+        flex-direction: column;
+
+        .super-category-title {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        ul {
+            padding-left: $padding / 2;
+
+            li:not(.super-category) {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+
+                list-style-type: none;
+            }
+        }
+    } /* .super-category */
+} /* .widget_categories */
+
+@mixin widget-calendar($caption-font, $caption-size, $caption-color, $font, $font-size, $selected, $selected-hover) {
+    caption {
+        font-family: $caption-font;
+        font-size: $caption-size;
+        color: $caption-color;
+    }
+
+    td {
+        font-family: $font;
+        font-size: $font-size;
+
+        a {
+            @include link($selected, $selected-hover);
+        }
+    }
+}
+
+.widget_search {
+    display: flex;
+    flex-direction: row;
+    
+    label {
+        display: none;
+    }
+
+    form > div {
+        display: flex;
+        flex-direction: row;
+    }
 }

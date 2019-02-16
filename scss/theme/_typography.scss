@@ -1,40 +1,40 @@
-h1 {
+h1, .h1 {
   font-family: $font-primary;
   font-size: $font-huge;
   font-weight: bold;
   color: $primary;
 }
 
-h2 {
-  font-family: $font-secondary;
+h2, .h2 {
+  font-family: $font-primary;
   font-size: $font-large;
   font-weight: bold;
   color: $secondary;
 }
 
-h3 {
+h3, .h3 {
   font-family: $font-primary;
   font-size: $font-bigger;
   font-weight: bold;
   color: $primary;
 }
 
-h4 {
-  font-family: $font-secondary;
+h4, .h4 {
+  font-family: $font-primary;
   font-size: $font-big;
   font-weight: bold;
   color: $secondary;
 }
 
-h5 {
+h5, .h5 {
   font-family: $font-primary;
   font-size: $font-medium;
   font-weight: bold;
   color: $primary;
 }
 
-h6 {
-  font-family: $font-secondary;
+h6, .h6 {
+  font-family: $font-primary;
   font-size: $font-small;
   font-weight: bold;
   color: $secondary;

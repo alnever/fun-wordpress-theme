@@ -1,4 +1,4 @@
-@mixin link($color, $hover-color, $underline) {
+@mixin link($color, $hover-color, $underline: false) {
     color: $color;
     text-decoration: none;
 
@@ -22,64 +22,6 @@
       } @else {
         text-decoration: none;
       }
-    }
-
-    &:visited{
-
-    }
-}
-
-@mixin btn($color, $hover-color) {
-    color: $white;
-    background-color: $color;
-    text-decoration: none;
-    border: 1px solid $color;
-    border-radius: $border-radius;
-    padding: 0.5rem;
-
-    &:link {
-
-    }
-
-    &:hover {
-      background-color: $hover-color;
-      border: 1px solid $hover-color;
-      text-decoration: none;
-    }
-
-    &:active {
-      background-color: $hover-color;
-      border: 1px solid $hover-color;
-      text-decoration: none;
-    }
-
-    &:visited{
-
-    }
-}
-
-@mixin btn-outline($color, $hover-color) {
-    color: $white;
-    background-color: $color;
-    text-decoration: none;
-    border: 1px solid $color;
-    border-radius: $border-radius;
-    padding: 0.5rem;
-
-    &:link {
-
-    }
-
-    &:hover {
-      background-color: $hover-color;
-      border: 1px solid $hover-color;
-      text-decoration: none;
-    }
-
-    &:active {
-      background-color: $hover-color;
-      border: 1px solid $hover-color;
-      text-decoration: none;
     }
 
     &:visited{

@@ -47,3 +47,7 @@ footer, .footer {
 .footer-sidebar {
   @include row($content-width, $content-align, nowrap);
 }
+
+.menu-sidebar {
+    @include row(auto, $content-align, nowrap);    
+}
