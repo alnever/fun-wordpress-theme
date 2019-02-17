@@ -296,7 +296,7 @@ nav.navbar {
   @media only screen and (min-width: 768px) {
     nav.navbar {
       flex-direction: row;
-      justify-content: none; } }
+      justify-content: flex-start; } }
   nav.navbar > .brand-toggle {
     display: flex;
     flex-direction: row;
@@ -335,6 +335,7 @@ nav.navbar {
   nav.navbar > .collapsed {
     display: none;
     flex-direction: column;
+    align-items: baseline;
     width: 100%;
     /* navbar inside collapsed */
     /* div.nav */ }
@@ -342,8 +343,7 @@ nav.navbar {
       nav.navbar > .collapsed {
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
-        width: auto; } }
+        justify-content: space-between; } }
     nav.navbar > .collapsed > div.nav {
       /* div.menu */ }
       nav.navbar > .collapsed > div.nav > div {
@@ -731,7 +731,7 @@ nav.navbar {
       text-decoration: none; }
 
 .widget_search {
-  padding: 1em; }
+  padding-right: 1em; }
 
 .vertical-sidebar .widget_pages {
   display: flex;
