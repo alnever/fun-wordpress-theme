@@ -1,3 +1,7 @@
 nav.navbar {
   @include navbar($font-primary, $font-smaller, $primary, $secondary, $light);
+
+  .toggle {
+      @include badge-outline($font-primary, $font-small, $dark);
+  }
 }
