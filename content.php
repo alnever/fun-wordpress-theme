@@ -1,6 +1,6 @@
 <div class="content">
     <!-- left sidebar -->
-    <div class="sidebar left-sidebar">
+    <div class="vertical-sidebar left-sidebar">
         <?php wp_nav_menu([
                 'theme_location' => 'secondary',
                 'depth' => 3,
@@ -32,7 +32,7 @@
     <!-- posts -->
 
     <!-- right sidebar -->
-    <div class="sidebar right-sidebar">
+    <div class="vertical-sidebar right-sidebar">
         <?php dynamic_sidebar('right-sidebar'); ?>
     </div>
 </div>

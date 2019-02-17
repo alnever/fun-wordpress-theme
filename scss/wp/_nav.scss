@@ -95,6 +95,7 @@
             /* menu items with submenus */
             &.page_item_has_children,
             &.menu-item-has-children {
+
                 @include media-break-up($medium) {
                     position: relative;
                 }
@@ -151,7 +152,7 @@
 } /* end of mixin horizontal-menu */
 
 /*
-* vartical menu
+* vertical menu
 */
 
 @mixin vertical-menu($font, $font-size, $color, $hover-color, $bg-color) {
@@ -220,3 +221,108 @@
     } /* ul */
 
 }
+
+
+/*
+* Horizontal menu for horizontal sidebars
+*/
+
+@mixin horizontal-sidebar-menu($font, $font-size, $color, $hover-color, $bg-color) {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+
+    justify-content: space-between;
+
+    @include media-break-up($medium) {
+      flex-direction: row;
+      justify-content: none;
+    }
+
+    background-color: $bg-color;
+
+    & > ul {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      width: 100%;
+
+      @include media-break-up($medium) {
+        flex-direction: row;
+      }
+
+      /* menu item */
+      & > li {
+        display: flex;
+        align-items: baseline;
+        list-style-type: none;
+        padding: $padding;
+        width: 100%;
+
+        @include media-break-up($medium) {
+            width: auto;
+        }
+
+        a {
+          @include link($color, $hover-color, false);
+          font-family: $font;
+          font-size: $font-size;
+        }
+
+        /* menu items with submenus */
+        &.page_item_has_children,
+        &.menu-item-has-children {
+            display: flex;
+            flex-direction: column;
+            align-items: baseline;
+
+            @include media-break-up($medium) {
+                flex-direction: row;
+            }
+
+           .super-item {
+              display: flex;
+              flex-direction: row;
+              width: 100%;
+              align-items: baseline;
+              justify-content: space-between;
+
+              @include media-break-up($medium) {
+                  width: auto;
+              }
+          }
+
+          /* submenu */
+          ul.children,
+          ul.sub-menu {
+            display: none;
+            flex-direction: column;
+
+            background-color: $bg-color;
+
+            @include media-break-up($medium) {
+                flex-direction: row;
+            }
+
+            /* submenu items */
+            & > li {
+              list-style-type: none;
+
+              @include media-break-up($medium) {
+                  padding: 0;
+                  padding-left: $padding;
+                  padding-right: $padding;
+              }
+
+              & > a {
+                @include link($color, $hover-color, false);
+                font-family: $font;
+                font-size: $font-size - 2px;
+              }
+            }
+          }
+        } /* .page_item_has_children */
+      } /* li - menu-item or page_item */
+    } /* ul */
+
+} /* end of mixin horizontal-menu */

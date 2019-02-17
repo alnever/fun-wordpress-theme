@@ -41,13 +41,15 @@ footer, .footer {
 }
 
 .header-sidebar {
-  @include row($content-width, $content-align, nowrap);
+  @include row($content-width, $content-align, wrap);
+  padding: $padding;
 }
 
 .footer-sidebar {
-  @include row($content-width, $content-align, nowrap);
+  @include row($content-width, $content-align, wrap);
+  padding: $padding;
 }
 
 .menu-sidebar {
-    @include row(auto, $content-align, nowrap);    
+    @include row(auto, $content-align, nowrap);
 }

@@ -9,7 +9,7 @@
     <div class="nav">
       <?php wp_nav_menu(['theme_location' => 'primary', 'depth' => 3]); ?>
     </div>
-    <div class="menu-sidebar">
+    <div class="horizontal-sisebar menu-sidebar">
       <?php dynamic_sidebar('menu-sidebar'); ?>
     </div>
   </div>

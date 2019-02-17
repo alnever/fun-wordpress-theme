@@ -1,4 +1,4 @@
-<div class="footer-sidebar">
+<div class="horizontal-sidebar footer-sidebar">
   <?php dynamic_sidebar('footer-sidebar'); ?>
 </div>
 <footer class="footer">

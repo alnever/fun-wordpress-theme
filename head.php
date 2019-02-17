@@ -7,6 +7,6 @@
   </h2>
 </header>
 <!-- header sidebar -->
-<div class="header-sidebar">
+<div class="horizontal-sidebar header-sidebar">
   <?php dynamic_sidebar('header-sidebar'); ?>
 </div>

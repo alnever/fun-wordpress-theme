@@ -69,3 +69,18 @@
     width: 20%;
   }
 }
+
+.horizontal-sidebar {
+    display: flex;
+    flex-direction: column;
+
+    @include media-break-up($medium) {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+}
+
+.vertical-sidebar {
+    display: flex;
+    flex-direction: column;
+}
