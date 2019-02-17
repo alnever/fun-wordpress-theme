@@ -58,34 +58,58 @@ img {
   .horizontal-sidebar .widget_categories .widget-category-count {
     margin-left: 0.5em;
     margin-right: 0.5em; }
+  .horizontal-sidebar .widget_categories li.cat-item:not(.super-category) {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%; }
+    @media only screen and (min-width: 768px) {
+      .horizontal-sidebar .widget_categories li.cat-item:not(.super-category) {
+        display: block;
+        width: auto; } }
   .horizontal-sidebar .widget_categories li.super-category {
     display: flex;
-    flex-direction: column; }
+    flex-direction: column;
+    align-items: baseline; }
     @media only screen and (min-width: 768px) {
       .horizontal-sidebar .widget_categories li.super-category {
-        flex-direction: row; } }
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap; } }
     .horizontal-sidebar .widget_categories li.super-category .super-category-title {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
       white-space: nowrap;
-      margin-bottom: 0.25em; }
+      margin-bottom: 0.25em;
+      width: 100%; }
       .horizontal-sidebar .widget_categories li.super-category .super-category-title a {
         white-space: nowrap; }
+      @media only screen and (min-width: 768px) {
+        .horizontal-sidebar .widget_categories li.super-category .super-category-title {
+          display: block;
+          width: auto; } }
     .horizontal-sidebar .widget_categories li.super-category ul {
       display: flex;
-      flex-direction: column; }
+      flex-direction: column;
+      width: 100%; }
       @media only screen and (min-width: 768px) {
         .horizontal-sidebar .widget_categories li.super-category ul {
-          flex-direction: row; } }
+          flex-direction: row;
+          width: auto; } }
       .horizontal-sidebar .widget_categories li.super-category ul li:not(.super-category) {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+        width: 100%;
         list-style-type: none;
         white-space: nowrap; }
         .horizontal-sidebar .widget_categories li.super-category ul li:not(.super-category) a {
           white-space: nowrap; }
+        @media only screen and (min-width: 768px) {
+          .horizontal-sidebar .widget_categories li.super-category ul li:not(.super-category) {
+            display: block;
+            width: auto; } }
 
 /* .widget_categories */
 .widget_search {
