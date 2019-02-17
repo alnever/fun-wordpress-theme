@@ -121,6 +121,7 @@ img {
     display: flex;
     flex-direction: row; }
 
+/* Media gallery widget */
 .container {
   display: flex;
   flex-direction: column;
@@ -904,6 +905,120 @@ nav.navbar {
               .horizontal-sidebar .widget_pages > ul > li.menu-item-has-children ul.sub-menu > li > a:active {
                 color: #fc4a1a;
                 text-decoration: none; }
+
+.horizontal-sidebar .widget_media_gallery {
+  width: 100%; }
+  .horizontal-sidebar .widget_media_gallery > div.gallery {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; }
+    .horizontal-sidebar .widget_media_gallery > div.gallery > dl {
+      width: 100% !important; }
+      @media only screen and (min-width: 768px) {
+        .horizontal-sidebar .widget_media_gallery > div.gallery > dl {
+          width: 25% !important; } }
+      .horizontal-sidebar .widget_media_gallery > div.gallery > dl a {
+        display: inline-flex; }
+        .horizontal-sidebar .widget_media_gallery > div.gallery > dl a img:hover {
+          cursor: pointer; }
+      .horizontal-sidebar .widget_media_gallery > div.gallery > dl div.gallery-full-image {
+        display: none;
+        position: fixed;
+        width: auto;
+        height: auto;
+        left: 50%;
+        top: 50%;
+        z-index: 777;
+        max-width: 100%;
+        max-height: 100%;
+        flex-direction: column;
+        padding: 2em;
+        background-color: #dfdce3;
+        border: 1px solid #bdbac1;
+        border-radius: 5px;
+        box-shadow: 0.25em 0.25em 0.5em #2c2c2d; }
+        .horizontal-sidebar .widget_media_gallery > div.gallery > dl div.gallery-full-image .close {
+          height: 100%;
+          text-align: center;
+          font-family: "Roboto", sans-serif;
+          font-size: 20px;
+          color: #2c2c2d;
+          border: 1px solid #2c2c2d;
+          border-radius: 5px;
+          display: flex;
+          padding-top: 0.25em;
+          padding-bottom: 0.25em;
+          padding-left: 0.5em;
+          padding-right: 0.5em;
+          margin-right: -1em;
+          margin-top: -1em;
+          margin-bottom: 0.5em;
+          float: right;
+          align-self: flex-end; }
+          .horizontal-sidebar .widget_media_gallery > div.gallery > dl div.gallery-full-image .close:hover {
+            text-decoration: none;
+            color: #ffffff;
+            background-color: #2c2c2d;
+            border: 1px solid #2c2c2d;
+            border-radius: 5px;
+            cursor: pointer; }
+
+.vertical-sidebar .widget_media_gallery {
+  width: 100%; }
+  .vertical-sidebar .widget_media_gallery > div.gallery {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; }
+    .vertical-sidebar .widget_media_gallery > div.gallery > dl {
+      width: 100% !important; }
+      @media only screen and (min-width: 768px) {
+        .vertical-sidebar .widget_media_gallery > div.gallery > dl {
+          width: 100% !important; } }
+      .vertical-sidebar .widget_media_gallery > div.gallery > dl a {
+        display: inline-flex; }
+        .vertical-sidebar .widget_media_gallery > div.gallery > dl a img:hover {
+          cursor: pointer; }
+      .vertical-sidebar .widget_media_gallery > div.gallery > dl div.gallery-full-image {
+        display: none;
+        position: fixed;
+        width: auto;
+        height: auto;
+        left: 50%;
+        top: 50%;
+        z-index: 777;
+        max-width: 100%;
+        max-height: 100%;
+        flex-direction: column;
+        padding: 2em;
+        background-color: #dfdce3;
+        border: 1px solid #bdbac1;
+        border-radius: 5px;
+        box-shadow: 0.25em 0.25em 0.5em #2c2c2d; }
+        .vertical-sidebar .widget_media_gallery > div.gallery > dl div.gallery-full-image .close {
+          height: 100%;
+          text-align: center;
+          font-family: "Roboto", sans-serif;
+          font-size: 20px;
+          color: #2c2c2d;
+          border: 1px solid #2c2c2d;
+          border-radius: 5px;
+          display: flex;
+          padding-top: 0.25em;
+          padding-bottom: 0.25em;
+          padding-left: 0.5em;
+          padding-right: 0.5em;
+          margin-right: -1em;
+          margin-top: -1em;
+          margin-bottom: 0.5em;
+          float: right;
+          align-self: flex-end; }
+          .vertical-sidebar .widget_media_gallery > div.gallery > dl div.gallery-full-image .close:hover {
+            text-decoration: none;
+            color: #ffffff;
+            background-color: #2c2c2d;
+            border: 1px solid #2c2c2d;
+            border-radius: 5px;
+            cursor: pointer; }
 
 input[type='text'],
 textarea {

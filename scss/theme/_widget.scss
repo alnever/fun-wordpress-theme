@@ -72,3 +72,11 @@
 .horizontal-sidebar .widget_pages {
     @include horizontal-sidebar-menu($font-primary, $font-code, $primary, $secondary, none);
 }
+
+.horizontal-sidebar .widget_media_gallery {
+    @include media-gallery(4);
+}
+
+.vertical-sidebar .widget_media_gallery {
+    @include media-gallery(1);
+}
