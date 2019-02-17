@@ -6,7 +6,7 @@ nav.navbar {
   }
 }
 
-.sidebar .menu, 
+.sidebar .menu,
 .vertical-menu {
-    @include vertical-menu($font-primary, $font-smaller, $primary, $secondary, none);
+    @include vertical-menu($font-primary, $font-code, $primary, $secondary, none);
 }

@@ -45,3 +45,7 @@
 .widget_search {
     padding: $padding;
 }
+
+.widget_pages {
+    @include vertical-menu($font-primary, $font-code, $primary, $secondary, none);
+}
