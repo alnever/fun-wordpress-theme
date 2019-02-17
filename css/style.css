@@ -370,6 +370,7 @@ nav.navbar {
       border-radius: 5px;
       cursor: pointer; }
 
+.sidebar .menu,
 .vertical-menu {
   display: flex;
   flex-direction: column;
@@ -377,63 +378,92 @@ nav.navbar {
   background-color: none;
   /* item list*/
   /* ul */ }
+  .sidebar .menu > ul,
   .vertical-menu > ul {
     display: flex;
     flex-direction: column;
     /* menu item */
     /* li - menu-item or page_item */ }
+    .sidebar .menu > ul > li,
     .vertical-menu > ul > li {
       list-style-type: none;
       padding: 1em;
       /* menu items with submenus */
       /* .page_item_has_children */ }
+      .sidebar .menu > ul > li a,
       .vertical-menu > ul > li a {
         color: #4abdac;
         text-decoration: none;
         font-family: "Roboto", sans-serif;
         font-size: 20px; }
+        .sidebar .menu > ul > li a:hover,
         .vertical-menu > ul > li a:hover {
           color: #fc4a1a;
           text-decoration: none; }
+        .sidebar .menu > ul > li a:active,
         .vertical-menu > ul > li a:active {
           color: #fc4a1a;
           text-decoration: none; }
-      .vertical-menu > ul > li.page_item_has_children, .vertical-menu > ul > li.menu-item-has-children {
+      .sidebar .menu > ul > li.page_item_has_children, .sidebar .menu > ul > li.menu-item-has-children,
+      .vertical-menu > ul > li.page_item_has_children,
+      .vertical-menu > ul > li.menu-item-has-children {
         /* submenu */ }
-        .vertical-menu > ul > li.page_item_has_children .super-item, .vertical-menu > ul > li.menu-item-has-children .super-item {
+        .sidebar .menu > ul > li.page_item_has_children .super-item, .sidebar .menu > ul > li.menu-item-has-children .super-item,
+        .vertical-menu > ul > li.page_item_has_children .super-item,
+        .vertical-menu > ul > li.menu-item-has-children .super-item {
           display: flex;
           flex-direction: row;
           width: 100%;
           align-items: baseline;
           justify-content: space-between; }
+        .sidebar .menu > ul > li.page_item_has_children ul.children,
+        .sidebar .menu > ul > li.page_item_has_children ul.sub-menu, .sidebar .menu > ul > li.menu-item-has-children ul.children,
+        .sidebar .menu > ul > li.menu-item-has-children ul.sub-menu,
         .vertical-menu > ul > li.page_item_has_children ul.children,
-        .vertical-menu > ul > li.page_item_has_children ul.sub-menu, .vertical-menu > ul > li.menu-item-has-children ul.children,
+        .vertical-menu > ul > li.page_item_has_children ul.sub-menu,
+        .vertical-menu > ul > li.menu-item-has-children ul.children,
         .vertical-menu > ul > li.menu-item-has-children ul.sub-menu {
           display: none;
           flex-direction: column;
           background-color: none;
           /* submenu items */ }
+          .sidebar .menu > ul > li.page_item_has_children ul.children > li,
+          .sidebar .menu > ul > li.page_item_has_children ul.sub-menu > li, .sidebar .menu > ul > li.menu-item-has-children ul.children > li,
+          .sidebar .menu > ul > li.menu-item-has-children ul.sub-menu > li,
           .vertical-menu > ul > li.page_item_has_children ul.children > li,
-          .vertical-menu > ul > li.page_item_has_children ul.sub-menu > li, .vertical-menu > ul > li.menu-item-has-children ul.children > li,
+          .vertical-menu > ul > li.page_item_has_children ul.sub-menu > li,
+          .vertical-menu > ul > li.menu-item-has-children ul.children > li,
           .vertical-menu > ul > li.menu-item-has-children ul.sub-menu > li {
             list-style-type: none;
             padding-top: 1em;
             padding-left: 1em;
             padding-bottom: 1em; }
+            .sidebar .menu > ul > li.page_item_has_children ul.children > li > a,
+            .sidebar .menu > ul > li.page_item_has_children ul.sub-menu > li > a, .sidebar .menu > ul > li.menu-item-has-children ul.children > li > a,
+            .sidebar .menu > ul > li.menu-item-has-children ul.sub-menu > li > a,
             .vertical-menu > ul > li.page_item_has_children ul.children > li > a,
-            .vertical-menu > ul > li.page_item_has_children ul.sub-menu > li > a, .vertical-menu > ul > li.menu-item-has-children ul.children > li > a,
+            .vertical-menu > ul > li.page_item_has_children ul.sub-menu > li > a,
+            .vertical-menu > ul > li.menu-item-has-children ul.children > li > a,
             .vertical-menu > ul > li.menu-item-has-children ul.sub-menu > li > a {
               color: #4abdac;
               text-decoration: none;
               font-family: "Roboto", sans-serif;
               font-size: 18px; }
+              .sidebar .menu > ul > li.page_item_has_children ul.children > li > a:hover,
+              .sidebar .menu > ul > li.page_item_has_children ul.sub-menu > li > a:hover, .sidebar .menu > ul > li.menu-item-has-children ul.children > li > a:hover,
+              .sidebar .menu > ul > li.menu-item-has-children ul.sub-menu > li > a:hover,
               .vertical-menu > ul > li.page_item_has_children ul.children > li > a:hover,
-              .vertical-menu > ul > li.page_item_has_children ul.sub-menu > li > a:hover, .vertical-menu > ul > li.menu-item-has-children ul.children > li > a:hover,
+              .vertical-menu > ul > li.page_item_has_children ul.sub-menu > li > a:hover,
+              .vertical-menu > ul > li.menu-item-has-children ul.children > li > a:hover,
               .vertical-menu > ul > li.menu-item-has-children ul.sub-menu > li > a:hover {
                 color: #fc4a1a;
                 text-decoration: none; }
+              .sidebar .menu > ul > li.page_item_has_children ul.children > li > a:active,
+              .sidebar .menu > ul > li.page_item_has_children ul.sub-menu > li > a:active, .sidebar .menu > ul > li.menu-item-has-children ul.children > li > a:active,
+              .sidebar .menu > ul > li.menu-item-has-children ul.sub-menu > li > a:active,
               .vertical-menu > ul > li.page_item_has_children ul.children > li > a:active,
-              .vertical-menu > ul > li.page_item_has_children ul.sub-menu > li > a:active, .vertical-menu > ul > li.menu-item-has-children ul.children > li > a:active,
+              .vertical-menu > ul > li.page_item_has_children ul.sub-menu > li > a:active,
+              .vertical-menu > ul > li.menu-item-has-children ul.children > li > a:active,
               .vertical-menu > ul > li.menu-item-has-children ul.sub-menu > li > a:active {
                 color: #fc4a1a;
                 text-decoration: none; }
