@@ -1,7 +1,11 @@
 nav.navbar {
-  @include navbar($font-primary, $font-smaller, $primary, $secondary, $light);
+  @include horizontal-menu($font-primary, $font-smaller, $primary, $secondary, $light);
 
   .toggle {
       @include badge-outline($font-primary, $font-small, $dark);
   }
+}
+
+.vertical-menu {
+    @include vertical-menu($font-primary, $font-smaller, $primary, $secondary, none);
 }

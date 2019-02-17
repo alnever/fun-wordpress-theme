@@ -17,7 +17,10 @@ add_theme_support('custom-header');
 
 function register_menus() {
   register_nav_menus(
-    ['primary' => __('Primary Menu', 'theme_textdomain')]
+    [
+        'primary' => __('Primary Menu', 'theme_textdomain'),
+        'secondary' => __('Secondary Menu', 'theme_textdomain'),
+    ]
   );
 }
 

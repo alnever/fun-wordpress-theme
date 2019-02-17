@@ -1,8 +1,8 @@
 /*
-* header menu
+* horizontal menu
 */
 
-@mixin navbar($font, $font-size, $color, $hover-color, $bg-color) {
+@mixin horizontal-menu($font, $font-size, $color, $hover-color, $bg-color) {
   display: flex;
   flex-direction: column;
   align-items: baseline;
@@ -115,11 +115,11 @@
                   }
                 display: none;
                 flex-direction: column;
-                min-width: 300px;
 
                 background-color: $bg-color;
 
                 @include media-break-up($medium) {
+                    min-width: 300px;
                     border: 1px solid $bg-color - #222222;
                     border-radius: $border-radius;
                 }
@@ -148,4 +148,71 @@
       } /* div.menu */
     } /* div.nav */
   } /* .collapsed */
+} /* end of mixin horizontal-menu */
+
+/*
+* vartical menu
+*/
+
+@mixin vertical-menu($font, $font-size, $color, $hover-color, $bg-color) {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+
+    background-color: $bg-color;
+
+    /* item list*/
+    & > ul {
+      display: flex;
+      flex-direction: column;
+
+      /* menu item */
+      & > li {
+        list-style-type: none;
+        padding: $padding;
+
+        a {
+          @include link($color, $hover-color, false);
+          font-family: $font;
+          font-size: $font-size;
+        }
+
+        /* menu items with submenus */
+        &.page_item_has_children,
+        &.menu-item-has-children {
+
+           .super-item {
+              display: flex;
+              flex-direction: row;
+              width: 100%;
+              align-items: baseline;
+              justify-content: space-between;
+          }
+
+          /* submenu */
+          ul.children,
+          ul.sub-menu {
+            display: none;
+            flex-direction: column;
+
+            background-color: $bg-color;
+
+            /* submenu items */
+            & > li {
+              list-style-type: none;
+              padding-top: $padding;
+              padding-left: $padding;
+              padding-bottom: $padding;
+
+              & > a {
+                @include link($color, $hover-color, false);
+                font-family: $font;
+                font-size: $font-size - 2px;
+              }
+            }
+          }
+        } /* .page_item_has_children */
+      } /* li - menu-item or page_item */
+    } /* ul */
+
 }
