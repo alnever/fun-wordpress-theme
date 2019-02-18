@@ -1,4 +1,5 @@
 input[type='text'],
+input[type='password'],
 textarea {
     @include input-text($font-primary, $font-regular, $dark);
 }

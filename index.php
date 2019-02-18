@@ -6,12 +6,12 @@
     <div class="main">
         <!-- header -->
         <header class="header" style="background-image:url( <?php header_image(); ?> )">
-          <h1 class="header-title">
-            <?php bloginfo('name'); ?>
-          </h1>
-          <h2 class="header-text">
-            <?php bloginfo('description'); ?>
-          </h2>
+            <div class="header-title">
+                <?php bloginfo('name'); ?>
+            </div>
+            <div class="header-text">
+                <?php bloginfo('description'); ?>
+            </div>
         </header>
 
         <!-- header sidebar -->
@@ -35,56 +35,56 @@
             <!-- posts -->
             <div class="posts">
                 <!-- sticky post -->
-                <?php
-                    $sticky = get_option('stiky_posts');
-                    $args = [
-                        'posts_per_page' => 1,
-                        'post__in' => $stiky,
-                        'ignore_stiky_posts' => 1,
-                    ];
-                    $query = new WP_Query($args);
-                    while ( $query->have_posts() ): $query->the_post();
-                ?>
-                    <article class="post-sticky">
-                        <div class="post-image">
-                            <?php if (has_post_thumbnail()):  ?>
-                                <img src="<?php the_post_thumbnail_url(); ?>" alt="">
-                            <?php endif; ?>
-                        </div>
-                        <div class="post-text">
-                            <!-- post header -->
-                            <div class="post-title">
-                                <?php the_title(); ?>
-                            </div>
-                            <!-- post before main text -->
-                            <div class="post-before">
-                                <div class="post-author">
-                                    <?php the_author(); ?>
-                                </div>
-                                <div class="post-date">
-                                    <?php the_date(); ?>
-                                </div>
+                <div class="sticky-posts">
+                    <?php
+                        $sticky = get_option('sticky_posts');
+                        $args = [
+                            'posts_per_page' => 1,
+                            'post__in' => $sticky,
+                            'ignore_sticky_posts' => 1,
+                        ];
+                        $query = new WP_Query($args);
+                        while ( $query->have_posts() ): $query->the_post();
+                    ?>
+                        <article class="post-sticky">
+                            <div class="post-image">
+                                <?php if (has_post_thumbnail()):  ?>
+                                    <img src="<?php the_post_thumbnail_url(); ?>" alt="">
+                                <?php endif; ?>
                             </div>
                             <div class="post-text">
-                                <?php the_excerpt(); ?>
-                            </div>
-                            <div class="post-after">
+                                <!-- post header -->
+                                <div class="post-title">
+                                    <?php the_title(); ?>
+                                </div>
+                                <!-- post before main text -->
+                                <div class="post-before">
+                                    <div class="post-author">
+                                        <?php the_author(); ?>
+                                    </div>
+                                    <div class="post-date">
+                                        <?php the_date(); ?>
+                                    </div>
+                                </div>
+                                <div class="post-text">
+                                    <?php the_excerpt(); ?>
+                                </div>
                                 <div class="post-categories">
                                     <?php the_category(); ?>
                                 </div>
                                 <div class="post-tags">
                                     <?php the_tags(); ?>
                                 </div>
+                                <div class="post-link">
+                                    <a href="<?php _e(get_permalink()); ?>">More...</a>
+                                </div>
                             </div>
-                            <div class="post-link">
-                                <a href="<?php _e(get_permalink()); ?>">More...</a>
-                            </div>
-                        </div>
-                    </article>
-                <?php
-                    endwhile;
-                    wp_reset_postdata();
-                ?>
+                        </article>
+                    <?php
+                        endwhile;
+                        wp_reset_postdata();
+                    ?>
+                </div>
 
                 <!-- main posts loop -->
                 <?php if (have_posts()): ?>
@@ -111,16 +111,14 @@
                                             <?php the_date(); ?>
                                         </div>
                                     </div>
-                                    <div class="post-text">
+                                    <div class="post-content">
                                         <?php the_excerpt(); ?>
                                     </div>
-                                    <div class="post-after">
-                                        <div class="post-categories">
-                                            <?php the_category(); ?>
-                                        </div>
-                                        <div class="post-tags">
-                                            <?php the_tags(); ?>
-                                        </div>
+                                    <div class="post-categories">
+                                        <?php the_category(); ?>
+                                    </div>
+                                    <div class="post-tags">
+                                        <?php the_tags(); ?>
                                     </div>
                                     <div class="post-link">
                                         <a href="<?php _e(get_permalink()); ?>">More...</a>
@@ -153,7 +151,23 @@
         <!-- footer -->
         <footer class="footer">
           <div class="footer-content">
-
+              <div class="footer_text">
+                <?php _e(get_theme_mod('footer_text')); ?>
+              </div>
+              <div class="footer_links">
+                  <a href="<?php _e(get_theme_mod('social_link_1')) ?>">
+                      <img src="<?php _e(get_theme_mod('social_icon_1')) ?>" />
+                  </a>
+                  <a href="<?php _e(get_theme_mod('social_link_2')) ?>">
+                      <img src="<?php _e(get_theme_mod('social_icon_2')) ?>" />
+                  </a>
+                  <a href="<?php _e(get_theme_mod('social_link_3')) ?>">
+                      <img src="<?php _e(get_theme_mod('social_icon_3')) ?>" />
+                  </a>
+              </div>
+          </div>
+          <div class="footer-creditial">
+              SASS Wordpress Theming Kit, &copy; Alex Neverov, 2019. All rights reserved
           </div>
         </footer>
 

@@ -11,6 +11,9 @@
 
 header, .header {
   @include column($content-width, $content-align);
+  @include header($primary);
+  @include header-title($font-primary, $font-enorm, $white);
+  @include header-text($font-secondary, $font-large, $white);
 }
 
 .content {
@@ -18,7 +21,7 @@ header, .header {
 }
 
 .posts {
-    @include col-8();
+    @include col-9();
 }
 
 .row {
@@ -27,10 +30,11 @@ header, .header {
 
 footer, .footer {
   @include column($content-width, $content-align);
+  @include footer-with-icons();
 }
 
 .left-sidebar {
-  @include col-4();
+  @include col-3();
   padding: $padding;
 }
 

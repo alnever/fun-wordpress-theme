@@ -6,12 +6,12 @@
     <div class="main">
         <!-- header -->
         <header class="header" style="background-image:url( <?php header_image(); ?> )">
-          <h1 class="header-title">
-            <?php bloginfo('name'); ?>
-          </h1>
-          <h2 class="header-text">
-            <?php bloginfo('description'); ?>
-          </h2>
+            <div class="header-title">
+                <?php bloginfo('name'); ?>
+            </div>
+            <div class="header-text">
+                <?php bloginfo('description'); ?>
+            </div>
         </header>
 
         <!-- header sidebar -->
@@ -59,16 +59,14 @@
                                             <?php the_date(); ?>
                                         </div>
                                     </div>
-                                    <div class="post-text">
+                                    <div class="post-content">
                                         <?php the_content(); ?>
                                     </div>
-                                    <div class="post-after">
-                                        <div class="post-categories">
-                                            <?php the_category(); ?>
-                                        </div>
-                                        <div class="post-tags">
-                                            <?php the_tags(); ?>
-                                        </div>
+                                    <div class="post-categories">
+                                        <?php the_category(); ?>
+                                    </div>
+                                    <div class="post-tags">
+                                        <?php the_tags(); ?>
                                     </div>
                                     <div class="post-link">
 
@@ -101,7 +99,15 @@
         <!-- footer -->
         <footer class="footer">
           <div class="footer-content">
+              <div class="footer_text">
+                <?php _e(get_theme_mod('footer_text')); ?>
+              </div>
+              <div class="footer_links">
 
+              </div>
+          </div>
+          <div class="footer-creditial">
+              SASS Wordpress Theming Kit, &copy; Alex Neverov, 2019. All rights reserved
           </div>
         </footer>
 

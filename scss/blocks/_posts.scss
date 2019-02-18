@@ -1,4 +1,4 @@
-@mixin post($pos-title: 0, $pos-before: 0, $pos-text: 0, $pos-after: 0, $pos-link: 0) {
+@mixin post($pos-title: 0, $pos-before: 0, $pos-text: 0, $pos-categories: 0, $pos-tags: 0, $pos-link: 0) {
     display: flex;
     padding: $padding;
 
@@ -35,34 +35,32 @@
 
         }
 
-        .post-text {
+        .post-content {
             font-family: $font-secondary;
             font-size: $font-regular;
             order: $pos-text;
         }
 
-        .post-after {
-            display: flex;
-            flex-direction: column;
+        .post-categories {
             font-family: $font-primary;
             font-size: $font-code;
-            order: $pos-after;
-
-            .post-categories {
-                li {
-                    display: inline-flex;
-                    a {
-                        @include badge-outline($font-primary, $font-code, $accent);
-                        padding: $padding / 4;
-                    }
-                }
-            }
-
-            .post-tags {
+            order: $pos-categories;
+            li {
+                display: inline-flex;
                 a {
-                    @include link($primary, $accent, true);
+                    @include badge-outline($font-primary, $font-code, $accent);
                     padding: $padding / 4;
                 }
+            }
+        }
+
+        .post-tags {
+            font-family: $font-primary;
+            font-size: $font-code;
+            order: $pos-tags;
+            a {
+                @include link($primary, $accent, true);
+                padding: $padding / 4;
             }
         }
 
@@ -80,19 +78,68 @@
     }
 }
 
-@mixin simple-column-post($pos-title: 0, $pos-before: 0, $pos-text: 0, $pos-after: 0, $pos-link: 0) {
-    @include post($pos-title, $pos-before, $pos-text, $pos-after, $pos-link);
+@mixin simple-column-post($pos-title: 0, $pos-before: 0, $pos-text: 0, $pos-categories: 0, $pos-tags: 0, $pos-link: 0) {
+    @include post($pos-title, $pos-before, $pos-text, $pos-categories, $pos-tags, $pos-link);
     flex-direction: column;
 }
 
-@mixin simple-row-post($pos-title: 0, $pos-before: 0, $pos-text: 0, $pos-after: 0, $pos-link: 0) {
-    @include post($pos-title, $pos-before, $pos-text, $pos-after, $pos-link);
-    flex-direction: row;
+@mixin simple-row-post($pos-title: 0, $pos-before: 0, $pos-text: 0, $pos-categories: 0, $pos-tags: 0, $pos-link: 0) {
+    @include post($pos-title, $pos-before, $pos-text, $pos-categories, $pos-tags, $pos-link);
+    flex-direction: column;
+
     .post-image, .post-text {
-        width: 50%;
+        width: 100%;
     }
 
     .post-text {
-        padding-left: $padding;
+        padding-left: 0;
+    }
+
+    @include media-break-up($medium) {
+        flex-direction: row;
+        .post-image, .post-text {
+            width: 50%;
+        }
+
+        .post-image {
+            padding-right: $padding / 2;
+        }
+
+        .post-text {
+            padding-left: $padding / 2;
+        }
+
+    }
+}
+
+@mixin serpantine-row-post($pos-title: 0, $pos-before: 0, $pos-text: 0, $pos-categories: 0, $pos-tags: 0, $pos-link: 0) {
+    @include simple-row-post($pos-title, $pos-before, $pos-text, $pos-categories, $pos-tags, $pos-link);
+
+    @include media-break-up($medium) {
+        &:nth-child(odd) {
+            flex-direction: row;
+            .post-image {
+                padding-right: $padding / 2;
+                padding-left: 0;
+            }
+
+            .post-text {
+                padding-left: $padding / 2;
+                padding-right: 0;
+            }
+        }
+
+        &:nth-child(even) {
+            flex-direction: row-reverse;
+            .post-image {
+                padding-left: $padding / 2;
+                padding-right: 0;
+            }
+
+            .post-text {
+                padding-right: $padding / 2;
+                padding-left: 0;
+            }
+        }
     }
 }

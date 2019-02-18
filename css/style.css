@@ -5,7 +5,9 @@
   margin: 0;
   padding: 0;
   max-width: 100%;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  -ms-word-wrap: break-word;
+  word-wrap: break-word; }
 
 img {
   max-width: 100%;
@@ -14,10 +16,10 @@ img {
 /*
 * classes for unit test
 */
-.alignleft, article.post-sticky .post-image {
+.alignleft {
   float: left;
   align-self: flex-start; }
-  .alignleft img, article.post-sticky .post-image img {
+  .alignleft img {
     float: left; }
 
 .alignright {
@@ -161,10 +163,26 @@ header, .header {
   display: flex;
   flex-direction: column;
   align-self: center;
-  width: 100%; }
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 2em;
+  background-color: #4abdac;
+  background-image: "";
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed; }
   @media only screen and (min-width: 768px) {
     header, .header {
       width: 1024px; } }
+  header .header-title, .header .header-title {
+    font-family: "Roboto", sans-serif;
+    font-size: 72px;
+    color: #ffffff; }
+  header .header-text, .header .header-text {
+    font-family: "Roboto Slab", serif;
+    font-size: 32px;
+    color: #ffffff; }
 
 .content {
   display: flex;
@@ -183,7 +201,7 @@ header, .header {
   width: 100%; }
   @media only screen and (min-width: 768px) {
     .posts {
-      width: calc(100% * 2 / 3); } }
+      width: calc(100% * 3 / 4); } }
 
 .row {
   display: flex;
@@ -200,10 +218,48 @@ footer, .footer {
   display: flex;
   flex-direction: column;
   align-self: center;
-  width: 100%; }
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #dfdce3; }
   @media only screen and (min-width: 768px) {
     footer, .footer {
       width: 1024px; } }
+  footer .footer-content, .footer .footer-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%; }
+    @media only screen and (min-width: 768px) {
+      footer .footer-content, .footer .footer-content {
+        padding: 2em;
+        flex-direction: row;
+        align-items: center; } }
+    footer .footer-content .footer_text, .footer .footer-content .footer_text {
+      font-family: "Roboto", sans-serif;
+      font-size: 14px;
+      color: #2c2c2d;
+      width: 100%; }
+      @media only screen and (min-width: 768px) {
+        footer .footer-content .footer_text, .footer .footer-content .footer_text {
+          width: 75%; } }
+    footer .footer-content .footer_links, .footer .footer-content .footer_links {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-around;
+      font-family: "Roboto", sans-serif;
+      font-size: 14px;
+      color: #2c2c2d;
+      width: 100%; }
+      @media only screen and (min-width: 768px) {
+        footer .footer-content .footer_links, .footer .footer-content .footer_links {
+          width: 25%; } }
+      footer .footer-content .footer_links img, .footer .footer-content .footer_links img {
+        max-width: 48px;
+        max-height: 48px; }
+  footer .footer-creditial, .footer .footer-creditial {
+    padding: 1em;
+    text-align: center; }
 
 .left-sidebar {
   display: flex;
@@ -212,7 +268,7 @@ footer, .footer {
   padding: 1em; }
   @media only screen and (min-width: 768px) {
     .left-sidebar {
-      width: calc(100% / 3); } }
+      width: calc(100% / 4); } }
 
 .right-sidebar {
   display: flex;
@@ -1089,6 +1145,7 @@ div.pagination {
             cursor: pointer; }
 
 input[type='text'],
+input[type='password'],
 textarea {
   font-family: "Roboto", sans-serif;
   font-size: 14px;
@@ -1134,9 +1191,6 @@ article.post-index {
   display: flex;
   padding: 1em;
   flex-direction: column; }
-  @media only screen and (min-width: 768px) {
-    article.post-index {
-      width: calc(100% / 3); } }
   article.post-index * {
     min-height: 0;
     min-width: 0; }
@@ -1157,19 +1211,17 @@ article.post-index {
         font-family: "Roboto Slab", serif;
         font-size: 12px;
         margin-right: 1em; }
-    article.post-index .post-text .post-text {
+    article.post-index .post-text .post-content {
       font-family: "Roboto Slab", serif;
       font-size: 14px;
       order: 3; }
-    article.post-index .post-text .post-after {
-      display: flex;
-      flex-direction: column;
+    article.post-index .post-text .post-categories {
       font-family: "Roboto", sans-serif;
       font-size: 12px;
       order: 4; }
-      article.post-index .post-text .post-after .post-categories li {
+      article.post-index .post-text .post-categories li {
         display: inline-flex; }
-        article.post-index .post-text .post-after .post-categories li a {
+        article.post-index .post-text .post-categories li a {
           height: 100%;
           text-align: center;
           font-family: "Roboto", sans-serif;
@@ -1178,28 +1230,32 @@ article.post-index {
           border: 1px solid #f76733;
           border-radius: 5px;
           padding: 0.25em; }
-          article.post-index .post-text .post-after .post-categories li a:hover {
+          article.post-index .post-text .post-categories li a:hover {
             text-decoration: none;
             color: #ffffff;
             background-color: #f76733;
             border: 1px solid #f76733;
             border-radius: 5px;
             cursor: pointer; }
-      article.post-index .post-text .post-after .post-tags a {
+    article.post-index .post-text .post-tags {
+      font-family: "Roboto", sans-serif;
+      font-size: 12px;
+      order: 5; }
+      article.post-index .post-text .post-tags a {
         color: #4abdac;
         text-decoration: none;
         padding: 0.25em; }
-        article.post-index .post-text .post-after .post-tags a:hover {
+        article.post-index .post-text .post-tags a:hover {
           color: #f76733;
           text-decoration: underline; }
-        article.post-index .post-text .post-after .post-tags a:active {
+        article.post-index .post-text .post-tags a:active {
           color: #f76733;
           text-decoration: underline; }
     article.post-index .post-text .post-link {
       display: flex;
       flex-direction: row;
       justify-content: flex-end;
-      order: 5; }
+      order: 6; }
       article.post-index .post-text .post-link a {
         height: 100%;
         text-align: center;
@@ -1222,6 +1278,36 @@ article.post-index {
           text-decoration: none;
           color: #4abdac;
           background: none; }
+  article.post-index .post-image, article.post-index .post-text {
+    width: 100%; }
+  article.post-index .post-text {
+    padding-left: 0; }
+  @media only screen and (min-width: 768px) {
+    article.post-index {
+      flex-direction: row; }
+      article.post-index .post-image, article.post-index .post-text {
+        width: 50%; }
+      article.post-index .post-image {
+        padding-right: 0.5em; }
+      article.post-index .post-text {
+        padding-left: 0.5em; } }
+  @media only screen and (min-width: 768px) {
+    article.post-index:nth-child(odd) {
+      flex-direction: row; }
+      article.post-index:nth-child(odd) .post-image {
+        padding-right: 0.5em;
+        padding-left: 0; }
+      article.post-index:nth-child(odd) .post-text {
+        padding-left: 0.5em;
+        padding-right: 0; }
+    article.post-index:nth-child(even) {
+      flex-direction: row-reverse; }
+      article.post-index:nth-child(even) .post-image {
+        padding-left: 0.5em;
+        padding-right: 0; }
+      article.post-index:nth-child(even) .post-text {
+        padding-right: 0.5em;
+        padding-left: 0; } }
 
 article.post-single {
   display: flex;
@@ -1250,19 +1336,17 @@ article.post-single {
         font-family: "Roboto Slab", serif;
         font-size: 12px;
         margin-right: 1em; }
-    article.post-single .post-text .post-text {
+    article.post-single .post-text .post-content {
       font-family: "Roboto Slab", serif;
       font-size: 14px;
       order: 0; }
-    article.post-single .post-text .post-after {
-      display: flex;
-      flex-direction: column;
+    article.post-single .post-text .post-categories {
       font-family: "Roboto", sans-serif;
       font-size: 12px;
       order: 0; }
-      article.post-single .post-text .post-after .post-categories li {
+      article.post-single .post-text .post-categories li {
         display: inline-flex; }
-        article.post-single .post-text .post-after .post-categories li a {
+        article.post-single .post-text .post-categories li a {
           height: 100%;
           text-align: center;
           font-family: "Roboto", sans-serif;
@@ -1271,21 +1355,25 @@ article.post-single {
           border: 1px solid #f76733;
           border-radius: 5px;
           padding: 0.25em; }
-          article.post-single .post-text .post-after .post-categories li a:hover {
+          article.post-single .post-text .post-categories li a:hover {
             text-decoration: none;
             color: #ffffff;
             background-color: #f76733;
             border: 1px solid #f76733;
             border-radius: 5px;
             cursor: pointer; }
-      article.post-single .post-text .post-after .post-tags a {
+    article.post-single .post-text .post-tags {
+      font-family: "Roboto", sans-serif;
+      font-size: 12px;
+      order: 0; }
+      article.post-single .post-text .post-tags a {
         color: #4abdac;
         text-decoration: none;
         padding: 0.25em; }
-        article.post-single .post-text .post-after .post-tags a:hover {
+        article.post-single .post-text .post-tags a:hover {
           color: #f76733;
           text-decoration: underline; }
-        article.post-single .post-text .post-after .post-tags a:active {
+        article.post-single .post-text .post-tags a:active {
           color: #f76733;
           text-decoration: underline; }
     article.post-single .post-text .post-link {
@@ -1322,7 +1410,7 @@ article.post-sticky {
   width: 100%;
   display: flex;
   padding: 1em;
-  flex-direction: row; }
+  flex-direction: column; }
   article.post-sticky * {
     min-height: 0;
     min-width: 0; }
@@ -1343,19 +1431,17 @@ article.post-sticky {
         font-family: "Roboto Slab", serif;
         font-size: 12px;
         margin-right: 1em; }
-    article.post-sticky .post-text .post-text {
+    article.post-sticky .post-text .post-content {
       font-family: "Roboto Slab", serif;
       font-size: 14px;
       order: 0; }
-    article.post-sticky .post-text .post-after {
-      display: flex;
-      flex-direction: column;
+    article.post-sticky .post-text .post-categories {
       font-family: "Roboto", sans-serif;
       font-size: 12px;
       order: 0; }
-      article.post-sticky .post-text .post-after .post-categories li {
+      article.post-sticky .post-text .post-categories li {
         display: inline-flex; }
-        article.post-sticky .post-text .post-after .post-categories li a {
+        article.post-sticky .post-text .post-categories li a {
           height: 100%;
           text-align: center;
           font-family: "Roboto", sans-serif;
@@ -1364,21 +1450,25 @@ article.post-sticky {
           border: 1px solid #f76733;
           border-radius: 5px;
           padding: 0.25em; }
-          article.post-sticky .post-text .post-after .post-categories li a:hover {
+          article.post-sticky .post-text .post-categories li a:hover {
             text-decoration: none;
             color: #ffffff;
             background-color: #f76733;
             border: 1px solid #f76733;
             border-radius: 5px;
             cursor: pointer; }
-      article.post-sticky .post-text .post-after .post-tags a {
+    article.post-sticky .post-text .post-tags {
+      font-family: "Roboto", sans-serif;
+      font-size: 12px;
+      order: 0; }
+      article.post-sticky .post-text .post-tags a {
         color: #4abdac;
         text-decoration: none;
         padding: 0.25em; }
-        article.post-sticky .post-text .post-after .post-tags a:hover {
+        article.post-sticky .post-text .post-tags a:hover {
           color: #f76733;
           text-decoration: underline; }
-        article.post-sticky .post-text .post-after .post-tags a:active {
+        article.post-sticky .post-text .post-tags a:active {
           color: #f76733;
           text-decoration: underline; }
     article.post-sticky .post-text .post-link {
@@ -1409,6 +1499,15 @@ article.post-sticky {
           color: #4abdac;
           background: none; }
   article.post-sticky .post-image, article.post-sticky .post-text {
-    width: 50%; }
+    width: 100%; }
   article.post-sticky .post-text {
-    padding-left: 1em; }
+    padding-left: 0; }
+  @media only screen and (min-width: 768px) {
+    article.post-sticky {
+      flex-direction: row; }
+      article.post-sticky .post-image, article.post-sticky .post-text {
+        width: 50%; }
+      article.post-sticky .post-image {
+        padding-right: 0.5em; }
+      article.post-sticky .post-text {
+        padding-left: 0.5em; } }
