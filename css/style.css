@@ -346,7 +346,8 @@ h4, .h4 {
   font-weight: bold;
   color: #fc4a1a; }
 
-h5, .h5, article.post-index .post-text .post-title, article.post-single .post-text .post-title, article.post-sticky .post-text .post-title {
+h5, .h5, article.post-index .post-text .post-title, article.post-single .post-text .post-title, .sticky .post-text .post-title,
+article.post-sticky .post-text .post-title {
   font-family: "Roboto", sans-serif;
   font-size: 20px;
   font-weight: bold;
@@ -1413,6 +1414,7 @@ article.post-single {
           color: #4abdac;
           background: none; }
 
+.sticky,
 article.post-sticky {
   display: flex;
   flex-direction: column;
@@ -1420,36 +1422,47 @@ article.post-sticky {
   display: flex;
   padding: 1em;
   flex-direction: column; }
+  .sticky *,
   article.post-sticky * {
     min-height: 0;
     min-width: 0; }
+  .sticky .post-text,
   article.post-sticky .post-text {
     display: flex;
     flex-direction: column; }
+    .sticky .post-text > *,
     article.post-sticky .post-text > * {
       margin-bottom: 0.5em; }
+    .sticky .post-text .post-title,
     article.post-sticky .post-text .post-title {
       order: 0; }
+    .sticky .post-text .post-before,
     article.post-sticky .post-text .post-before {
       display: flex;
       flex-direction: row;
       justify-content: flex-start;
       order: 0; }
+      .sticky .post-text .post-before .post-author,
+      .sticky .post-text .post-before .post-date,
       article.post-sticky .post-text .post-before .post-author,
       article.post-sticky .post-text .post-before .post-date {
         font-family: "Roboto Slab", serif;
         font-size: 12px;
         margin-right: 1em; }
+    .sticky .post-text .post-content,
     article.post-sticky .post-text .post-content {
       font-family: "Roboto Slab", serif;
       font-size: 14px;
       order: 0; }
+    .sticky .post-text .post-categories,
     article.post-sticky .post-text .post-categories {
       font-family: "Roboto", sans-serif;
       font-size: 12px;
       order: 0; }
+      .sticky .post-text .post-categories li,
       article.post-sticky .post-text .post-categories li {
         display: inline-flex; }
+        .sticky .post-text .post-categories li a,
         article.post-sticky .post-text .post-categories li a {
           height: 100%;
           text-align: center;
@@ -1459,6 +1472,7 @@ article.post-sticky {
           border: 1px solid #f76733;
           border-radius: 5px;
           padding: 0.25em; }
+          .sticky .post-text .post-categories li a:hover,
           article.post-sticky .post-text .post-categories li a:hover {
             text-decoration: none;
             color: #ffffff;
@@ -1466,25 +1480,31 @@ article.post-sticky {
             border: 1px solid #f76733;
             border-radius: 5px;
             cursor: pointer; }
+    .sticky .post-text .post-tags,
     article.post-sticky .post-text .post-tags {
       font-family: "Roboto", sans-serif;
       font-size: 12px;
       order: 0; }
+      .sticky .post-text .post-tags a,
       article.post-sticky .post-text .post-tags a {
         color: #4abdac;
         text-decoration: none;
         padding: 0.25em; }
+        .sticky .post-text .post-tags a:hover,
         article.post-sticky .post-text .post-tags a:hover {
           color: #f76733;
           text-decoration: underline; }
+        .sticky .post-text .post-tags a:active,
         article.post-sticky .post-text .post-tags a:active {
           color: #f76733;
           text-decoration: underline; }
+    .sticky .post-text .post-link,
     article.post-sticky .post-text .post-link {
       display: flex;
       flex-direction: row;
       justify-content: flex-end;
       order: 0; }
+      .sticky .post-text .post-link a,
       article.post-sticky .post-text .post-link a {
         height: 100%;
         text-align: center;
@@ -1496,6 +1516,7 @@ article.post-sticky {
         color: #ffffff;
         background-color: #4abdac;
         padding: 0.5em; }
+        .sticky .post-text .post-link a:hover,
         article.post-sticky .post-text .post-link a:hover {
           text-decoration: none;
           color: #ffffff;
@@ -1503,20 +1524,29 @@ article.post-sticky {
           border: 1px solid #4abdac;
           border-radius: 5px;
           cursor: pointer; }
+        .sticky .post-text .post-link a:hover,
         article.post-sticky .post-text .post-link a:hover {
           text-decoration: none;
           color: #4abdac;
           background: none; }
-  article.post-sticky .post-image, article.post-sticky .post-text {
+  .sticky .post-image, .sticky .post-text,
+  article.post-sticky .post-image,
+  article.post-sticky .post-text {
     width: 100%; }
+  .sticky .post-text,
   article.post-sticky .post-text {
     padding-left: 0; }
   @media only screen and (min-width: 768px) {
+    .sticky,
     article.post-sticky {
       flex-direction: row; }
-      article.post-sticky .post-image, article.post-sticky .post-text {
+      .sticky .post-image, .sticky .post-text,
+      article.post-sticky .post-image,
+      article.post-sticky .post-text {
         width: 50%; }
+      .sticky .post-image,
       article.post-sticky .post-image {
         padding-right: 0.5em; }
+      .sticky .post-text,
       article.post-sticky .post-text {
         padding-left: 0.5em; } }

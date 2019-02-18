@@ -1,7 +1,7 @@
 <nav class="navbar">
     <div class="brand-toggle">
         <div class="brand">
-          <a href="<?php bloginfo('url'); ?>"> <?php bloginfo('name'); ?> </a>
+          <a href="<?php echo esc_url( home_url() );  ?>"> <?php bloginfo('name'); ?> </a>
         </div>
         <div class="toggle">&#8801;</div>
     </div>

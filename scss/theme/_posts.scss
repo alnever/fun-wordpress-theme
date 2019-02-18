@@ -8,6 +8,7 @@ article.post-single {
   @include simple-column-post();
 }
 
+.sticky,
 article.post-sticky {
   @include col-12();
   @include simple-row-post();

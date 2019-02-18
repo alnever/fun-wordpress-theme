@@ -155,14 +155,14 @@
                 <?php _e(get_theme_mod('footer_text')); ?>
               </div>
               <div class="footer_links">
-                  <a href="<?php _e(get_theme_mod('social_link_1')) ?>">
-                      <img src="<?php _e(get_theme_mod('social_icon_1')) ?>" />
+                  <a href="<?php echo (get_theme_mod('social_link_1')) ?>">
+                      <img src="<?php echo (get_theme_mod('social_icon_1')) ?>" />
                   </a>
-                  <a href="<?php _e(get_theme_mod('social_link_2')) ?>">
-                      <img src="<?php _e(get_theme_mod('social_icon_2')) ?>" />
+                  <a href="<?php echo (get_theme_mod('social_link_2')) ?>">
+                      <img src="<?php echo (get_theme_mod('social_icon_2')) ?>" />
                   </a>
-                  <a href="<?php _e(get_theme_mod('social_link_3')) ?>">
-                      <img src="<?php _e(get_theme_mod('social_icon_3')) ?>" />
+                  <a href="<?php echo (get_theme_mod('social_link_3')) ?>">
+                      <img src="<?php echo (get_theme_mod('social_icon_3')) ?>" />
                   </a>
               </div>
           </div>
