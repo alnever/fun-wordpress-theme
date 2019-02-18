@@ -56,4 +56,9 @@ footer, .footer {
 
 .menu-sidebar {
   @include row(auto, $content-align, nowrap);
+  padding: $padding;
+
+  @include media-break-up($medium) {
+    padding: 0;
+  }
 }

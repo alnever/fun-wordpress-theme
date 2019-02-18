@@ -1,8 +1,10 @@
 nav.navbar {
   @include horizontal-menu($font-primary, $font-smaller, $primary, $secondary, $light);
-
+  .brand {
+      white-space: nowrap;
+  }
   .toggle {
-      @include badge-outline($font-primary, $font-small, $dark);
+      @include badge-outline($font-primary, $font-small, $primary);
   }
 }
 

@@ -66,7 +66,7 @@
                                         <?php the_date(); ?>
                                     </div>
                                 </div>
-                                <div class="post-text">
+                                <div class="post-content">
                                     <?php the_excerpt(); ?>
                                 </div>
                                 <div class="post-categories">
