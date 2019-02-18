@@ -31,15 +31,67 @@
                 ?>
                 <?php dynamic_sidebar('left-sidebar'); ?>
             </div>
-            <!-- sticky post -->
 
             <!-- posts -->
             <div class="posts">
+                <!-- sticky post -->
+                <div class="sticky-posts">
+                    <?php
+                        $sticky = get_option('sticky_posts');
+                        $args = [
+                            'posts_per_page' => 1,
+                            'post__in' => $sticky,
+                            'ignore_sticky_posts' => 1,
+                        ];
+                        $query = new WP_Query($args);
+                        while ( $query->have_posts() ): $query->the_post();
+                    ?>
+                        <article class="post-sticky" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+                            <div class="post-image">
+                                <?php if (has_post_thumbnail()):  ?>
+                                    <img src="<?php the_post_thumbnail_url(); ?>" alt="">
+                                <?php endif; ?>
+                            </div>
+                            <div class="post-text">
+                                <!-- post header -->
+                                <div class="post-title">
+                                    <?php the_title(); ?>
+                                </div>
+                                <!-- post before main text -->
+                                <div class="post-before">
+                                    <div class="post-author">
+                                        <?php the_author(); ?>
+                                    </div>
+                                    <div class="post-date">
+                                        <?php the_date(); ?>
+                                    </div>
+                                </div>
+                                <div class="post-content">
+                                    <?php the_excerpt(); ?>
+                                </div>
+                                <div class="post-categories">
+                                    <?php the_category(); ?>
+                                </div>
+                                <div class="post-tags">
+                                    <?php the_tags(); ?>
+                                </div>
+                                <div class="post-link">
+                                    <a href="<?php _e(get_permalink()); ?>">More...</a>
+                                </div>
+                            </div>
+                        </article>
+                    <?php
+                        endwhile;
+                        wp_reset_postdata();
+                    ?>
+                </div>
+
+                <!-- main posts loop -->
                 <?php if (have_posts()): ?>
                     <div class="row">
 
                           <?php while(have_posts()): the_post(); ?>
-                            <article class="post-single">
+                            <article class="post-index" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
                                 <div class="post-image">
                                     <?php if (has_post_thumbnail()):  ?>
                                         <img src="<?php the_post_thumbnail_url(); ?>" alt="">
@@ -60,7 +112,7 @@
                                         </div>
                                     </div>
                                     <div class="post-content">
-                                        <?php the_content(); ?>
+                                        <?php the_excerpt(); ?>
                                     </div>
                                     <div class="post-categories">
                                         <?php the_category(); ?>
@@ -69,12 +121,17 @@
                                         <?php the_tags(); ?>
                                     </div>
                                     <div class="post-link">
-
+                                        <a href="<?php _e(get_permalink()); ?>">More...</a>
                                     </div>
                                 </div>
                             </article>
-                            <?php wp_link_pages( [] ); ?> 
                           <?php endwhile; ?>
+                    </div>
+                    <div class="pagination">
+                        <?php the_posts_pagination([
+                                'screen_reader_text' => ''
+                            ]);
+                        ?>
                     </div>
                 <?php endif; ?>
             </div>
@@ -95,7 +152,7 @@
         <footer class="footer">
           <div class="footer-content">
               <div class="footer_text">
-                <?php echo (get_theme_mod('footer_text')); ?>
+                <?php _e(get_theme_mod('footer_text')); ?>
               </div>
               <div class="footer_links">
                   <a href="<?php echo (get_theme_mod('social_link_1')) ?>">

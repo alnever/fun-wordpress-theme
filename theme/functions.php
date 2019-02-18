@@ -9,7 +9,7 @@ if ( ! isset( $content_width ) ) {
 // textdomain
 
 function register_textdomain() {
-  load_sass-wordpress-theming-kit('sass-wordpress-theming-kit', get_template_directory()."/languages");
+  load_theme_textdomain('sass-wordpress-theming-kit', get_template_directory()."/languages");
 }
 
 
@@ -20,7 +20,7 @@ add_action('after_setup_theme','register_textdomain');
 
 add_theme_support('featured-image');
 add_theme_support('custom-header');
-add_theme_support( "title-tag" );
+add_theme_support( 'title-tag' );
 add_theme_support( 'automatic-feed-links' );
 
 // menus

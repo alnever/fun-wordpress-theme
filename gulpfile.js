@@ -11,10 +11,10 @@ var commonjs = require('rollup-plugin-commonjs');
 
 
 var sassSource = './scss/style.scss';
-var cssDest = './css';
+var cssDest = './theme/css';
 var jsSource = './src/index.js';
 var jsInput = './src/index.js';
-var jsDest = './js';
+var jsDest = './theme/js';
 
 
 gulp.task('styles',function() {
