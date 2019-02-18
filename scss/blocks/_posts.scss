@@ -1,0 +1,98 @@
+@mixin post($pos-title: 0, $pos-before: 0, $pos-text: 0, $pos-after: 0, $pos-link: 0) {
+    display: flex;
+    padding: $padding;
+
+    * {
+        min-height: 0;
+        min-width: 0;
+    }
+
+    .post-text {
+        display: flex;
+        flex-direction: column;
+
+        & > * {
+            margin-bottom: $padding / 2;
+        }
+
+        .post-title {
+            @extend .h5;
+            order: $pos-title;
+        }
+
+        .post-before {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            order: $pos-before;
+
+            .post-author,
+            .post-date {
+                font-family: $font-secondary;
+                font-size: $font-code;
+                margin-right: 1em;
+            }
+
+        }
+
+        .post-text {
+            font-family: $font-secondary;
+            font-size: $font-regular;
+            order: $pos-text;
+        }
+
+        .post-after {
+            display: flex;
+            flex-direction: column;
+            font-family: $font-primary;
+            font-size: $font-code;
+            order: $pos-after;
+
+            .post-categories {
+                li {
+                    display: inline-flex;
+                    a {
+                        @include badge-outline($font-primary, $font-code, $accent);
+                        padding: $padding / 4;
+                    }
+                }
+            }
+
+            .post-tags {
+                a {
+                    @include link($primary, $accent, true);
+                    padding: $padding / 4;
+                }
+            }
+        }
+
+        .post-link {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            order: $pos-link;
+
+            a {
+                @include badge($font-primary, $font-code, $primary);
+                padding: $padding / 2;
+            }
+        }
+    }
+}
+
+@mixin simple-column-post($pos-title: 0, $pos-before: 0, $pos-text: 0, $pos-after: 0, $pos-link: 0) {
+    @include post($pos-title, $pos-before, $pos-text, $pos-after, $pos-link);
+    flex-direction: column;
+}
+
+@mixin simple-row-post($pos-title: 0, $pos-before: 0, $pos-text: 0, $pos-after: 0, $pos-link: 0) {
+    @include post($pos-title, $pos-before, $pos-text, $pos-after, $pos-link);
+    flex-direction: row;
+    .post-image, .post-text {
+        width: 50%;
+    }
+
+    .post-text {
+        padding-left: $padding;
+    }
+}

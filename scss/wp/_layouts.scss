@@ -27,7 +27,7 @@
 @mixin col-1 {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: calc(100% / 12);
 }
 
 @mixin col-2 {
@@ -36,7 +36,7 @@
   width: 100%;
 
   @include media-break-up($medium) {
-    width: 50%;
+    width: calc(100% / 6);
   }
 }
 
@@ -46,7 +46,7 @@
   width: 100%;
 
   @include media-break-up($medium) {
-    width: 33.333333%;
+    width: calc(100% / 4);
   }
 }
 
@@ -56,7 +56,7 @@
   width: 100%;
 
   @include media-break-up($medium) {
-    width: 25%;
+    width: calc(100% / 3);
   }
 }
 
@@ -66,9 +66,77 @@
   width: 100%;
 
   @include media-break-up($medium) {
-    width: 20%;
+    width: calc(100% * 5 / 12);
   }
 }
+
+@mixin col-6 {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  @include media-break-up($medium) {
+    width: 50%;
+  }
+}
+
+@mixin col-7 {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  @include media-break-up($medium) {
+    width: calc(100% * 7 / 12);
+  }
+}
+
+@mixin col-8 {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  @include media-break-up($medium) {
+    width: calc(100% * 2 / 3);
+  }
+}
+
+@mixin col-9 {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  @include media-break-up($medium) {
+    width: calc(100% * 3 / 4);
+  }
+}
+
+@mixin col-10 {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  @include media-break-up($medium) {
+    width: calc(100% * 5 / 6);
+  }
+}
+
+@mixin col-11 {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  @include media-break-up($medium) {
+    width: calc(100% * 11 / 12);
+  }
+}
+
+
+@mixin col-12 {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
 
 .horizontal-sidebar {
     display: flex;

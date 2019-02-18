@@ -6,7 +6,32 @@ nav.navbar {
   }
 }
 
-.sidebar .menu,
+.vertical-sidebar .menu,
 .vertical-menu {
-    @include vertical-menu($font-primary, $font-code, $primary, $secondary, none);
+    @include vertical-menu($font-primary, $font-regular, $primary, $secondary, none);
+}
+
+div.pagination {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    @include pagination();
+
+    a {
+        @include badge-outline($font-primary, $font-regular, $primary);
+    }
+
+    span.current {
+        @include badge-outline($font-primary, $font-regular, $dark);
+    }
+
+    a, span.current {
+        padding: $padding / 2;
+        border-radius: 0;
+        margin: 0;
+
+        &:hover {
+            border-radius: 0;
+        }
+    }
 }

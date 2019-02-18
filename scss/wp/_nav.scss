@@ -326,3 +326,16 @@
     } /* ul */
 
 } /* end of mixin horizontal-menu */
+
+
+/*
+* posts pagination
+*/
+
+@mixin pagination() {
+    nav.pagination {
+        & > .screen-reader-text {
+            display: none;
+        }
+    }
+}

@@ -1,0 +1,14 @@
+article.post-index {
+  @include col-4();
+  @include simple-column-post(2,1,3,4,5);
+}
+
+article.post-single {
+  @include col-12();
+  @include simple-column-post();
+}
+
+article.post-sticky {
+  @include col-12();
+  @include simple-row-post();
+}

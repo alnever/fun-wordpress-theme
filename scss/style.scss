@@ -1,20 +1,30 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed|Roboto+Mono|Roboto+Slab');
 
-@import 'theme/variables';
 
+
+// default variables, classes, and  mixins
+@import 'default/variables';
 @import 'default/default';
 @import 'default/media';
 
+// WordPress elements
+@import 'wp/units';
 @import 'wp/layouts';
 @import 'wp/links';
-@import 'wp/badge';
 @import 'wp/nav';
 @import 'wp/widget';
 @import 'wp/form';
+@import 'wp/posts';
 
+// additional styling blocks
+@import 'blocks/badge';
+@import 'blocks/posts';
+
+// theme elements and re-styling
 @import 'theme/layouts';
 @import 'theme/typography';
 @import 'theme/links';
 @import 'theme/nav';
 @import 'theme/widget';
 @import 'theme/form';
+@import 'theme/posts';
