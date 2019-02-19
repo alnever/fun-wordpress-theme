@@ -8,13 +8,13 @@ if ( ! isset( $content_width ) ) {
 
 // textdomain
 
-function swpk_register_textdomain() {
+function swtk_register_textdomain() {
   load_theme_textdomain('sass-wordpress-theming-kit', get_template_directory()."/languages");
 }
 
 
 
-add_action('after_setup_theme','swpk_register_textdomain');
+add_action('after_setup_theme','swtk_register_textdomain');
 
 // add theme support
 
@@ -40,7 +40,7 @@ add_editor_style(get_template_directory_uri() . './css/style.css');
 
 // menus
 
-function swpk_register_menus() {
+function swtk_register_menus() {
   register_nav_menus(
     [
         'primary' => __('Primary Menu', 'sass-wordpress-theming-kit'),
@@ -49,9 +49,9 @@ function swpk_register_menus() {
   );
 }
 
-add_action('init','swpk_register_menus');
+add_action('init','swtk_register_menus');
 
-function swpk_register_widget_areas() {
+function swtk_register_widget_areas() {
   register_sidebar([
     'name' => __('Menu widgets','sass-wordpress-theming-kit'),
     'id' => 'menu-sidebar',
@@ -74,12 +74,12 @@ function swpk_register_widget_areas() {
   ]);
 }
 
-add_action('widgets_init', 'swpk_register_widget_areas');
+add_action('widgets_init', 'swtk_register_widget_areas');
 
 
 // add footer text option
 
-function swpk_register_footer_text_option ($wp_customize) {
+function swtk_register_footer_text_option ($wp_customize) {
     $wp_customize->add_setting('footer_text', [
         'default' => '',
         'transport' => 'refresh',
@@ -99,7 +99,7 @@ function swpk_register_footer_text_option ($wp_customize) {
     ]));
 }
 
-add_action('customize_register', 'swpk_register_footer_text_option');
+add_action('customize_register', 'swtk_register_footer_text_option');
 
 // add social buttons for footer
 
@@ -117,7 +117,7 @@ function swtk_sanitize_image_files($file, $setting) {
 	return ( $file_ext['ext'] ? $file : $setting->default );
 }
 
-function swpk_register_footer_socials($wp_customize) {
+function swtk_register_footer_socials($wp_customize) {
     $wp_customize->add_setting('social_link_1', [
         'default' => '',
         'transport' => 'refresh',
@@ -196,15 +196,15 @@ function swpk_register_footer_socials($wp_customize) {
     ]));
 }
 
-add_action('customize_register', 'swpk_register_footer_socials');
+add_action('customize_register', 'swtk_register_footer_socials');
 
 // for comments
 
-function swpk_enqueue_comments_reply() {
+function swtk_enqueue_comments_reply() {
 	if( get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
-add_action( 'comment_form_before', 'swpk_enqueue_comments_reply' );
+add_action( 'comment_form_before', 'swtk_enqueue_comments_reply' );
 
 ?>

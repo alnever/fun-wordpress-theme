@@ -16,7 +16,7 @@
 
   background-color: $bg-color;
 
-  & > .brand-toggle {
+  & > .swtk-brand-toggle {
       display: flex;
       flex-direction: row;
       align-items: baseline;
@@ -28,7 +28,7 @@
           width: auto;
       }
 
-      & > .brand {
+      & > .swtk-brand {
         float: left;
         padding: $padding;
 
@@ -39,7 +39,7 @@
         }
       }
 
-      & > .toggle {
+      & > .swtk-toggle {
         display: flex;
         padding-top: $padding / 4;
         padding-bottom: $padding / 4;
@@ -57,7 +57,7 @@
 
 
 
-  & >.collapsed {
+  & >.swtk-collapsed {
     display: none;
     flex-direction: column;
     align-items: baseline;
@@ -70,13 +70,14 @@
     }
 
     /* navbar inside collapsed */
-    & > div.nav {
+    & > div.swtk-nav {
       & > div {
         /* item list*/
         & > ul {
           display: flex;
           flex-direction: column;
           padding-left: 0;
+          margin: 0;
 
           @include media-break-up($medium) {
             flex-direction: row;
@@ -85,7 +86,9 @@
           /* menu item */
           & > li {
             list-style-type: none;
-            padding: $padding;
+            padding: 0;
+            padding-left: $padding;
+            padding-right: $padding;
 
             a {
               @include link($color, $hover-color, false);
@@ -101,7 +104,7 @@
                     position: relative;
                 }
 
-               .super-item {
+               .swtk-super-item {
                   display: flex;
                   flex-direction: row;
                   width: 100%;
@@ -190,7 +193,7 @@
             display: flex;
             flex-direction: column;
 
-           .super-item {
+           .swtk-super-item {
               display: flex;
               flex-direction: row;
               width: 100%;
@@ -285,7 +288,7 @@
                 flex-direction: row;
             }
 
-           .super-item {
+           .swtk-super-item {
               display: flex;
               flex-direction: row;
               width: 100%;
@@ -338,9 +341,16 @@
 */
 
 @mixin pagination() {
-    nav.pagination {
+    nav.swtk-pagination {
         & > .screen-reader-text {
             display: none;
         }
     }
+}
+
+@mixin posts-navigation() {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
 }

@@ -87,7 +87,7 @@
 
 /* special definitions fot categories widget */
 
-.vertical-sidebar .widget_categories {
+.swtk-vertical-sidebar .widget_categories {
     li.super-category {
         display: flex;
         flex-direction: column;
@@ -113,14 +113,14 @@
     } /* .super-category */
 } /* .widget_categories */
 
-.horizontal-sidebar .widget_categories {
+.swtk-horizontal-sidebar .widget_categories {
 
     .widget-category-count {
         margin-left: $padding / 2;
         margin-right: $padding / 2;
     }
 
-    li.cat-item:not(.super-category) {
+    li.cat-item:not(.swtk-super-category) {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
@@ -132,7 +132,7 @@
         }
     }
 
-    li.super-category {
+    li.swtk-super-category {
         display: flex;
         flex-direction: column;
         align-items: baseline;
@@ -143,7 +143,7 @@
             flex-wrap: wrap;
         }
 
-        .super-category-title {
+        .swtk-super-category-title {
             display: flex;
             flex-direction: row;
             justify-content: space-between;
@@ -171,7 +171,7 @@
                 width: auto;
             }
 
-            li:not(.super-category) {
+            li:not(.swtk-super-category) {
                 display: flex;
                 flex-direction: row;
                 justify-content: space-between;
@@ -200,12 +200,15 @@
         color: $caption-color;
     }
 
-    td {
-        font-family: $font;
-        font-size: $font-size;
+    table#wp-calendar {
+        width: 100%;
+        td {
+            font-family: $font;
+            font-size: $font-size;
 
-        a {
-            @include link($selected, $selected-hover);
+            a {
+                @include link($selected, $selected-hover);
+            }
         }
     }
 }
@@ -248,7 +251,7 @@
                 }
             }
 
-            div.gallery-full-image {
+            div.swtk-gallery-full-image {
                 display: none;
                 position: fixed;
                 width: auto;
@@ -276,7 +279,7 @@
                     // height: auto;
                 }
 
-                .close {
+                .swtk-close {
                     @include badge-outline($font-primary, $font-smaller, $dark);
                     display: flex;
                     padding-top: $padding / 4;

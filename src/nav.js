@@ -7,16 +7,16 @@ $(function() {
     var navbarCounter = 0;
 
     // identify toggle and collapsed navbar
-    $('.navbar').each(function() {
-        $(this).children('.brand-toggle').first()
-            .children('.toggle').first().attr("id","Navbar" + navbarCounter);
-        $(this).children('.collapsed').first().attr("id","Navbar" + navbarCounter);
+    $('.swtk-navbar').each(function() {
+        $(this).children('.swtk-brand-toggle').first()
+            .children('.swtk-toggle').first().attr("swtk-id","Navbar" + navbarCounter);
+        $(this).children('.swtk-collapsed').first().attr("swtk-id","Navbar" + navbarCounter);
     });
 
     // perfom toggle click action
-    $('.toggle').each(function() {
+    $('.swtk-toggle').each(function() {
         $(this).on('click', function() {
-            var collapsed = $('#' + $(this).attr('id') + '.collapsed');
+            var collapsed = $('#' + $(this).attr('id') + '.swtk-collapsed');
             if (collapsed.css('display') == 'none') {
                 collapsed.css('display','flex');
             } else {
@@ -32,12 +32,12 @@ $(function() {
 $(function() {
     $('.page_item_has_children, .menu-item-has-children').each(function() {
         // add a button to open submenu
-        $(this).append('<a href="javascript:void(0)" class="submenu-button">\u25BC</a>');
+        $(this).append('<a href="javascript:void(0)" class="swtk-submenu-button">\u25BC</a>');
         // wrap menu-link and submenu-button into one div
-        $(this).children('a').wrapAll('<div class="super-item"></div>');
+        $(this).children('a').wrapAll('<div class="swtk-super-item"></div>');
         // define a reaction on click for each submenu button
-        $(this).children('.super-item').first()
-            .children('.submenu-button').first()
+        $(this).children('.swtk-super-item').first()
+            .children('.swtk-submenu-button').first()
             .on('click', function () {
                 // $('.children, .sub-menu').css('display','none');
                 if ($(this).parent().siblings('ul').first().css('display') == 'none') {

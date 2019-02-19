@@ -1,15 +1,15 @@
-article.post-index {
+article.swtk-post-index {
   @include col-12();
   @include serpantine-row-post(2,1,3,4,5,6);
 }
 
-article.post-single {
+article.swtk-post-single {
   @include col-12();
   @include simple-column-post();
 }
 
 .sticky,
-article.post-sticky {
+article.swtk-post-sticky {
   @include col-12();
   @include simple-row-post();
 }

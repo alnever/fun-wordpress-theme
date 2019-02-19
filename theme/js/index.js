@@ -8,7 +8,7 @@
     $(function() {
         $('.widget_archive > ul > li').each(function() {
             $(this).html(
-                $(this).html().replace(/\((\d+)\)/ig, '<span class="widget-archive-count">$1</span>')
+                $(this).html().replace(/\((\d+)\)/ig, '<span class="swtk-widget-archive-count">$1</span>')
             );
         });
     });
@@ -20,7 +20,7 @@
     $(function() {
         $('.widget_categories > ul > li').each(function() {
             $(this).html(
-                $(this).html().replace(/\((\d+)\)/ig, '<span class="widget-category-count">$1</span>')
+                $(this).html().replace(/\((\d+)\)/ig, '<span class="swtk-widget-category-count">$1</span>')
             );
         });
     });
@@ -30,11 +30,11 @@
      */
 
     $(function() {
-        $('li.cat-item').has('ul.children').addClass('super-category');
+        $('li.cat-item').has('ul.children').addClass('swtk-super-category');
 
-        $('li.super-category').each(function() {
+        $('li.swtk-super-category').each(function() {
             $(this).children("a, span")
-                .wrapAll('<div class="super-category-title"></div>');
+                .wrapAll('<div class="swtk-super-category-title"></div>');
         });
     });
 
@@ -43,7 +43,7 @@
      * Tags cloud - remove brakets
      */
     $(function() {
-        $('.tag-link-count').each(function() {
+        $('.swtk-tag-link-count').each(function() {
             $(this).text(
                 $(this).text().replace(/\((\d+)\)/i, '$1')
             );
@@ -60,35 +60,35 @@
         $('.widget_media_gallery a').each(function() {
             // prevent default click action on a with href
             $(this).attr('href', 'javascript:void(0)');
-            $(this).attr('ws-image-counter', imageCounter);
+            $(this).attr('swtk-image-counter', imageCounter);
 
             // add a hidden layer for the full-size image
-            $(this).parent().append( '<div class="gallery-full-image"></div>' );
-            $(this).siblings('div.gallery-full-image')
-                .attr('ws-image-counter', imageCounter);
+            $(this).parent().append( '<div class="swtk-gallery-full-image"></div>' );
+            $(this).siblings('div.swtk-gallery-full-image')
+                .attr('swtk-image-counter', imageCounter);
 
             // add a close button
-            $(this).siblings('div.gallery-full-image')
-                .append('<a href="javascript:void(0)" class="close">X</div>');
+            $(this).siblings('div.swtk-gallery-full-image')
+                .append('<a href="javascript:void(0)" class="swtk-close">X</div>');
 
             // add a full-size images
-            $(this).siblings('div.gallery-full-image')
+            $(this).siblings('div.swtk-gallery-full-image')
                 .append('<img />');
 
             // get a name of the full-size image file
             var thumbnailName = $(this).children('img').first().attr('src');
             var fullName = thumbnailName.replace(/-\d+x\d+/i,"");
-            $(this).siblings('div.gallery-full-image')
+            $(this).siblings('div.swtk-gallery-full-image')
                 .children('img')
                 .attr('src', fullName);
 
             // define a new click-action for the link - show the full-size image
             //  on the top-level layer
             $(this).on('click',function(){
-                $(this).siblings('div.gallery-full-image').css('display', 'flex');
+                $(this).siblings('div.swtk-gallery-full-image').css('display', 'flex');
 
                 // define width and height of the full-size image div
-                $(this).siblings('div.gallery-full-image').each(function() {
+                $(this).siblings('div.swtk-gallery-full-image').each(function() {
 
                     // calculate div margins to positionate it in the center of screen
                     var marginLeft = $(this).outerWidth() / 2;
@@ -102,8 +102,8 @@
             });
 
             // define on-click action for close buttons
-            $(this).siblings('div.gallery-full-image')
-                .children('.close')
+            $(this).siblings('div.swtk-gallery-full-image')
+                .children('.swtk-close')
                 .on('click', function() {
                     $(this).parent().css('display', 'none');
                 });
@@ -120,16 +120,16 @@
         var navbarCounter = 0;
 
         // identify toggle and collapsed navbar
-        $('.navbar').each(function() {
-            $(this).children('.brand-toggle').first()
-                .children('.toggle').first().attr("id","Navbar" + navbarCounter);
-            $(this).children('.collapsed').first().attr("id","Navbar" + navbarCounter);
+        $('.swtk-navbar').each(function() {
+            $(this).children('.swtk-brand-toggle').first()
+                .children('.swtk-toggle').first().attr("swtk-id","Navbar" + navbarCounter);
+            $(this).children('.swtk-collapsed').first().attr("swtk-id","Navbar" + navbarCounter);
         });
 
         // perfom toggle click action
-        $('.toggle').each(function() {
+        $('.swtk-toggle').each(function() {
             $(this).on('click', function() {
-                var collapsed = $('#' + $(this).attr('id') + '.collapsed');
+                var collapsed = $('#' + $(this).attr('id') + '.swtk-collapsed');
                 if (collapsed.css('display') == 'none') {
                     collapsed.css('display','flex');
                 } else {
@@ -145,12 +145,12 @@
     $(function() {
         $('.page_item_has_children, .menu-item-has-children').each(function() {
             // add a button to open submenu
-            $(this).append('<a href="javascript:void(0)" class="submenu-button">\u25BC</a>');
+            $(this).append('<a href="javascript:void(0)" class="swtk-submenu-button">\u25BC</a>');
             // wrap menu-link and submenu-button into one div
-            $(this).children('a').wrapAll('<div class="super-item"></div>');
+            $(this).children('a').wrapAll('<div class="swtk-super-item"></div>');
             // define a reaction on click for each submenu button
-            $(this).children('.super-item').first()
-                .children('.submenu-button').first()
+            $(this).children('.swtk-super-item').first()
+                .children('.swtk-submenu-button').first()
                 .on('click', function () {
                     // $('.children, .sub-menu').css('display','none');
                     if ($(this).parent().siblings('ul').first().css('display') == 'none') {

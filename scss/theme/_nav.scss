@@ -1,19 +1,19 @@
-nav.navbar {
+nav.swtk-navbar {
   @include horizontal-menu($font-primary, $font-smaller, $primary, $secondary, $light);
-  .brand {
+  .swtk-brand {
       white-space: nowrap;
   }
-  .toggle {
+  .swtk-toggle {
       @include badge-outline($font-primary, $font-small, $primary);
   }
 }
 
-.vertical-sidebar .menu,
-.vertical-menu {
+.swtk-vertical-sidebar .menu,
+.swtk-vertical-menu {
     @include vertical-menu($font-primary, $font-regular, $primary, $secondary, none);
 }
 
-div.pagination {
+div.swtk-pagination {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -36,4 +36,8 @@ div.pagination {
             border-radius: 0;
         }
     }
+}
+
+.swtk-posts-navigation {
+    @include posts-navigation();
 }

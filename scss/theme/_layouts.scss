@@ -1,62 +1,64 @@
-.container {
+.swtk-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
 } /* .container */
 
-.main {
+.swtk-main {
   display: flex;
   flex-direction: column;
 }
 
-header, .header {
+header, .swtk-header {
   @include column($content-width, $content-align);
   @include header($primary);
   @include header-title($font-primary, $font-enorm, $white);
   @include header-text($font-secondary, $font-large, $white);
 }
 
-.content {
+.swtk-content {
   @include row($content-width, $content-align, nowrap);
 }
 
-.posts {
+.swtk-posts {
     @include col-9();
 }
 
-.row {
+.swtk-row {
   @include row();
 }
 
-footer, .footer {
+footer, .swtk-footer {
   @include column($content-width, $content-align);
   @include footer-with-icons();
 }
 
-.left-sidebar {
+.swtk-left-sidebar {
   @include col-3();
   padding: $padding;
+  padding-top: 0;
 }
 
-.right-sidebar {
-  @include col-4();
+.swtk-right-sidebar {
+  @include col-3();
   padding: $padding;
   display: none;
 }
 
-.header-sidebar {
+.swtk-header-sidebar {
   @include row($content-width, $content-align, wrap);
   padding: $padding;
 }
 
-.footer-sidebar {
+.swtk-footer-sidebar {
   @include row($content-width, $content-align, wrap);
   padding: $padding;
 }
 
-.menu-sidebar {
+.swtk-menu-sidebar {
   @include row(auto, $content-align, nowrap);
   padding: $padding;
+ align-self: baseline;
 
   @include media-break-up($medium) {
     padding: 0;

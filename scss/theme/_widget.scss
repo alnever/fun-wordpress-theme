@@ -1,4 +1,4 @@
-.vertical-sidebar .widget {
+.swtk-vertical-sidebar .widget {
     @include widget($font-primary, $font-smaller, $secondary, $font-primary, $font-code, $primary, $accent);
     padding-bottom: $padding;
 
@@ -7,30 +7,30 @@
     }
 }
 
-.horizontal-sidebar .widget {
+.swtk-horizontal-sidebar .widget {
     @include horizontal-widget($font-primary, $font-smaller, $secondary, $font-primary, $font-code, $primary, $accent);
     padding-bottom: $padding;
 }
 
 .widget_archive {
-    .widget-archive-count {
+    .swtk-widget-archive-count {
         @include badge();
     }
 }
 
 .widget_categories {
-    .widget-category-count {
+    .swtk-widget-category-count {
         @include badge();
     }
 }
 
-.vertical-sidebar .widget_recent_entries,
-.vertical-sidebar .widget_recent_comments {
+.swtk-vertical-sidebar .widget_recent_entries,
+.swtk-vertical-sidebar .widget_recent_comments {
     @include widget-column-elements();
 }
 
-.horizontal-sidebar .widget_recent_entries,
-.horizontal-sidebar .widget_recent_comments {
+.swtk-horizontal-sidebar .widget_recent_entries,
+.swtk-horizontal-sidebar .widget_recent_comments {
     @include widget-row-elements();
     span {
         margin-left: $padding/2;
@@ -65,18 +65,18 @@
     padding-right: $padding;
 }
 
-.vertical-sidebar .widget_pages {
+.swtk-vertical-sidebar .widget_pages {
     @include vertical-menu($font-primary, $font-code, $primary, $secondary, none);
 }
 
-.horizontal-sidebar .widget_pages {
+.swtk-horizontal-sidebar .widget_pages {
     @include horizontal-sidebar-menu($font-primary, $font-code, $primary, $secondary, none);
 }
 
-.horizontal-sidebar .widget_media_gallery {
+.swtk-horizontal-sidebar .widget_media_gallery {
     @include media-gallery(4);
 }
 
-.vertical-sidebar .widget_media_gallery {
+.swtk-vertical-sidebar .widget_media_gallery {
     @include media-gallery(1);
 }

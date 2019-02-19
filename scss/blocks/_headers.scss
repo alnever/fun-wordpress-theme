@@ -12,7 +12,7 @@
 }
 
 @mixin header-title($font, $font-size, $color) {
-    .header-title {
+    .swtk-header-title {
         font-family: $font;
         font-size: $font-size;
         color: $color;
@@ -20,7 +20,7 @@
 }
 
 @mixin header-text($font, $font-size, $color) {
-    .header-text {
+    .swtk-header-text {
         font-family: $font;
         font-size: $font-size;
         color: $color;

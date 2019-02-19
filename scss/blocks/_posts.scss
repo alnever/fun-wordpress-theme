@@ -7,7 +7,7 @@
         min-width: 0;
     }
 
-    .post-text {
+    .swtk-post-text {
         display: flex;
         flex-direction: column;
 
@@ -15,19 +15,19 @@
             margin-bottom: $padding / 2;
         }
 
-        .post-title {
-            @extend .h5;
+        .swtk-post-title {
+            @extend .swtk-h5;
             order: $pos-title;
         }
 
-        .post-before {
+        .swtk-post-before {
             display: flex;
             flex-direction: row;
             justify-content: flex-start;
             order: $pos-before;
 
-            .post-author,
-            .post-date {
+            .swtk-post-author,
+            .swtk-post-date {
                 font-family: $font-secondary;
                 font-size: $font-code;
                 margin-right: 1em;
@@ -35,16 +35,19 @@
 
         }
 
-        .post-content {
+        .swtk-post-content {
             font-family: $font-secondary;
             font-size: $font-regular;
             order: $pos-text;
         }
 
-        .post-categories {
+        .swtk-post-categories {
             font-family: $font-primary;
             font-size: $font-code;
             order: $pos-categories;
+            ul {
+                padding-left: 0;
+            }
             li {
                 display: inline-flex;
                 a {
@@ -54,7 +57,7 @@
             }
         }
 
-        .post-tags {
+        .swtk-post-tags {
             font-family: $font-primary;
             font-size: $font-code;
             order: $pos-tags;
@@ -64,7 +67,7 @@
             }
         }
 
-        .post-link {
+        .swtk-post-link {
             display: flex;
             flex-direction: row;
             justify-content: flex-end;
@@ -87,25 +90,25 @@
     @include post($pos-title, $pos-before, $pos-text, $pos-categories, $pos-tags, $pos-link);
     flex-direction: column;
 
-    .post-image, .post-text {
+    .swtk-post-image, .swtk-post-text {
         width: 100%;
     }
 
-    .post-text {
+    .swtk-post-text {
         padding-left: 0;
     }
 
     @include media-break-up($medium) {
         flex-direction: row;
-        .post-image, .post-text {
+        .swtk-post-image, .swtk-post-text {
             width: 50%;
         }
 
-        .post-image {
+        .swtk-post-image {
             padding-right: $padding / 2;
         }
 
-        .post-text {
+        .swtk-post-text {
             padding-left: $padding / 2;
         }
 
@@ -118,12 +121,12 @@
     @include media-break-up($medium) {
         &:nth-child(odd) {
             flex-direction: row;
-            .post-image {
+            .swtk-post-image {
                 padding-right: $padding / 2;
                 padding-left: 0;
             }
 
-            .post-text {
+            .swtk-post-text {
                 padding-left: $padding / 2;
                 padding-right: 0;
             }
@@ -131,12 +134,12 @@
 
         &:nth-child(even) {
             flex-direction: row-reverse;
-            .post-image {
+            .swtk-post-image {
                 padding-left: $padding / 2;
                 padding-right: 0;
             }
 
-            .post-text {
+            .swtk-post-text {
                 padding-right: $padding / 2;
                 padding-left: 0;
             }
