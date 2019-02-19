@@ -250,7 +250,8 @@ header, .swtk-header {
   align-self: center;
   width: 100%;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  align-items: center;
   padding: 2em;
   background-color: #4abdac;
   background-image: "";
@@ -260,6 +261,10 @@ header, .swtk-header {
   @media only screen and (min-width: 768px) {
     header, .swtk-header {
       width: 1024px; } }
+  header .swtk-header-logo, .swtk-header .swtk-header-logo {
+    padding: 1em; }
+  header .swtk-header-text-block, .swtk-header .swtk-header-text-block {
+    padding: 1em; }
   header .swtk-header-title, .swtk-header .swtk-header-title {
     font-family: "Roboto", sans-serif;
     font-size: 72px;
@@ -377,8 +382,6 @@ footer, .swtk-footer {
   padding: 1em; }
   @media only screen and (min-width: 768px) {
     .swtk-header-sidebar {
-      flex-direction: row;
-      flex-wrap: wrap;
       width: 1024px; } }
 
 .swtk-footer-sidebar {

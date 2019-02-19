@@ -46,7 +46,7 @@ footer, .swtk-footer {
 }
 
 .swtk-header-sidebar {
-  @include row($content-width, $content-align, wrap);
+  @include column($content-width, $content-align);
   padding: $padding;
 }
 
