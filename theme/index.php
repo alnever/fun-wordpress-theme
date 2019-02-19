@@ -5,7 +5,7 @@
     <?php get_template_part('nav'); ?>
     <div class="swtk-main">
         <!-- header -->
-        <header class="swtk-header" style="background-image:url( <?php header_image(); ?> ); background-color: #<?php background_color(); ?> ;">
+        <header class="swtk-header" style="background-image:url( <?php header_image(); ?> );">
             <div class="swtk-header-logo">
                 <?php
                     $custom_logo_id = get_theme_mod( 'custom_logo' );
