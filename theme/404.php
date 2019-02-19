@@ -40,56 +40,17 @@
                 ?>
                 <?php dynamic_sidebar('left-sidebar'); ?>
             </div>
-            <!-- sticky post -->
 
             <!-- posts -->
             <div class="swtk-posts">
-                <?php if (have_posts()): the_post(); ?>
-                    <div class="swtk-row">
+                <div class="swtk-404">
+                    <div class="swtk-404-number">
 
-                            <article class="swtk-post-single" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-                                <div class="swtk-post-image">
-                                    <?php if (has_post_thumbnail()):  ?>
-                                        <img src="<?php the_post_thumbnail_url(); ?>" alt="">
-                                    <?php endif; ?>
-                                </div>
-                                <div class="swtk-post-text">
-                                    <!-- post header -->
-                                    <div class="swtk-post-title">
-                                        <?php the_title(); ?>
-                                    </div>
-                                    <!-- post before main text -->
-                                    <div class="swtk-post-before">
-                                        <div class="swtk-post-author">
-                                            <?php the_author(); ?>
-                                        </div>
-                                        <div class="swtk-post-date">
-                                            <?php the_date(); ?>
-                                        </div>
-                                    </div>
-                                    <div class="swtk-post-content">
-                                        <?php the_content(); ?>
-                                    </div>
-                                    <div class="swtk-post-categories">
-                                        <?php the_category(); ?>
-                                    </div>
-                                    <div class="swtk-post-tags">
-                                        <?php the_tags(); ?>
-                                    </div>
-                                    <div class="swtk-post-pages">
-                                        <?php wp_link_pages(); ?>
-                                    </div>
-                                </div>
-                            </article>
-                            <!-- post pagination -->
-                            <div class="swtk-posts-navigation">
-                                <?php previous_post_link('%link'); ?>
-                                <?php next_post_link('%link'); ?>
-                            </div>
-                            <!-- comments -->
-                            <?php comments_template(); ?>
                     </div>
-                <?php endif; ?>
+                    <div class="swtk-404-message">
+                        <?php _e('Page not found!','sass-wordpress-theming-kit') ?>
+                    </div>
+                </div>
             </div>
             <!-- posts -->
 
@@ -105,7 +66,7 @@
         </div>
 
         <!-- footer -->
-        <footer class="swtk-footer">
+        <footer class="fswtk-ooter">
           <div class="swtk-footer-content">
               <div class="swtk-footer_text">
                 <?php echo (get_theme_mod('footer_text')); ?>

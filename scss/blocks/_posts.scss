@@ -79,6 +79,12 @@
             }
         }
     }
+
+    .swtk-post-pages > p {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+    }
 }
 
 @mixin simple-column-post($pos-title: 0, $pos-before: 0, $pos-text: 0, $pos-categories: 0, $pos-tags: 0, $pos-link: 0) {

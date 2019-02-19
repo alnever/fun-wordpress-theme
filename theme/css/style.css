@@ -412,6 +412,27 @@ footer, .swtk-footer {
     .swtk-menu-sidebar {
       padding: 0; } }
 
+.swtk-404 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center; }
+  .swtk-404 .swtk-404-number {
+    width: 0; }
+    .swtk-404 .swtk-404-number:before {
+      content: '404';
+      font-family: "Roboto", sans-serif;
+      font-size: 216px;
+      color: #f76733;
+      opacity: 0.3;
+      font-weight: bold;
+      width: auto;
+      white-space: nowrap; }
+  .swtk-404 .swtk-404-message {
+    font-family: "Roboto", sans-serif;
+    font-size: 72px;
+    color: #4abdac; }
+
 h1, .swtk-h1 {
   font-family: "Roboto", sans-serif;
   font-size: 36px;
@@ -786,7 +807,9 @@ div.swtk-pagination {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 100%; }
+  width: 100%;
+  padding: 1em;
+  font-family: "Roboto", sans-serif; }
 
 .swtk-vertical-sidebar .widget {
   list-style-type: none;
@@ -1399,6 +1422,10 @@ article.swtk-post-index {
           text-decoration: none;
           color: #4abdac;
           background: none; }
+  article.swtk-post-index .swtk-post-pages > p {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start; }
   article.swtk-post-index .swtk-post-image, article.swtk-post-index .swtk-post-text {
     width: 100%; }
   article.swtk-post-index .swtk-post-text {
@@ -1526,6 +1553,10 @@ article.swtk-post-single {
           text-decoration: none;
           color: #4abdac;
           background: none; }
+  article.swtk-post-single .swtk-post-pages > p {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start; }
 
 .sticky,
 article.swtk-post-sticky {
@@ -1645,6 +1676,11 @@ article.swtk-post-sticky {
           text-decoration: none;
           color: #4abdac;
           background: none; }
+  .sticky .swtk-post-pages > p,
+  article.swtk-post-sticky .swtk-post-pages > p {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start; }
   .sticky .swtk-post-image, .sticky .swtk-post-text,
   article.swtk-post-sticky .swtk-post-image,
   article.swtk-post-sticky .swtk-post-text {

@@ -40,4 +40,6 @@ div.swtk-pagination {
 
 .swtk-posts-navigation {
     @include posts-navigation();
+    padding: $padding;
+    font-family: $font-primary;
 }
