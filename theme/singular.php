@@ -74,6 +74,9 @@
                                 </div>
                             </article>
                             <?php wp_link_pages( [] ); ?>
+                            <div class="comments">
+                                <?php comments_template(); ?>
+                            </div>
                           <?php endwhile; ?>
                     </div>
                 <?php endif; ?>

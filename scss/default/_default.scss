@@ -6,6 +6,10 @@
   word-wrap: break-word;
 }
 
+body {
+    margin: 0;
+}
+
 img {
   max-width: 100%;
   height: auto;
@@ -129,9 +133,9 @@ code {
 }
 
 .gallery-caption {
-
+    @extend .wp-caption;
 }
 
 .bypostauthor {
-    
+    color:$secondary;
 }

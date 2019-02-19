@@ -76,7 +76,7 @@
                                     <?php the_tags(); ?>
                                 </div>
                                 <div class="post-link">
-                                    <a href="<?php _e(get_permalink()); ?>">More...</a>
+                                    <a href="<?php echo (get_permalink()); ?>">More...</a>
                                 </div>
                             </div>
                         </article>
@@ -121,7 +121,7 @@
                                         <?php the_tags(); ?>
                                     </div>
                                     <div class="post-link">
-                                        <a href="<?php _e(get_permalink()); ?>">More...</a>
+                                        <a href="<?php echo (get_permalink()); ?>">More...</a>
                                     </div>
                                 </div>
                             </article>
@@ -152,7 +152,7 @@
         <footer class="footer">
           <div class="footer-content">
               <div class="footer_text">
-                <?php _e(get_theme_mod('footer_text')); ?>
+                <?php echo (get_theme_mod('footer_text')); ?>
               </div>
               <div class="footer_links">
                   <a href="<?php echo (get_theme_mod('social_link_1')) ?>">
