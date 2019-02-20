@@ -1,4 +1,10 @@
 <!-- comments -->
+<?php
+    if ( post_password_required() ) {
+    	return;
+    }
+?>
+
 <div class="swtk-comments">
     <?php if (have_comments()): ?>
         <div class="swtk-comments-title">
@@ -16,7 +22,7 @@
         <!-- end of comments-list -->
         <!-- comments pagination -->
         <?php if (get_comment_pages_count() && get_option('page_comments')): ?>
-            <div class="swtk-comment-pagination">
+            <div class="swtk-comments-pagination">
                 <?php paginate_comments_links(); ?>
             </div>
         <?php endif; ?>

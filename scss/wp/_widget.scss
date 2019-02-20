@@ -210,6 +210,25 @@
                 @include link($selected, $selected-hover);
             }
         }
+
+        thead {
+            * {
+                font-family: $font;
+                font-size: $font-size;
+            }
+        }
+
+        tfoot {
+            tr {
+                td:first-child{
+                    text-align: left;
+                }
+
+                td:last-child {
+                    text-align: right;
+                }
+            }
+        }
     }
 }
 
